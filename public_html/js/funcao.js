@@ -84,7 +84,7 @@ window.onload = function() {
     function verificarLocal() {
         document.getElementById("submit").onclick = function(e) {
             switch (local.value) {
-                case "cantina":
+                case "xerox":
                     mover = true;
 
                     break;
@@ -98,7 +98,7 @@ window.onload = function() {
 
     function moverLocal(mv) {
         if (mv) {
-            boy.mvCantina();
+            boy.mvXerox();
         }
     }
     function paraTime() {

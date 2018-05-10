@@ -4,7 +4,7 @@ function Sprite(img) {
     this.srcX = this.srcY = 0;
     this.width = 119;
     this.height = 51;
-    this.speed = 0.5;
+    this.speed = 3;
     this.posX = 570;
     this.posY = 0;
     this.img = img;
@@ -13,13 +13,13 @@ function Sprite(img) {
     //Metodos
 
     //Desenha
-    this.draw = function(ctx) {
+    this.draw = function (ctx) {
         ctx.drawImage(this.img, this.srcX, this.srcY, this.width, this.height, this.posX, this.posY, this.width, this.height);
         //this.animacao();
     };
 
     //Mover
-    this.mvBiblioteca = function() {
+    this.mvBiblioteca = function () {
         if (this.posY <= 60) {
             this.posY += 1;
         }
@@ -63,7 +63,7 @@ function Sprite(img) {
         }
 
     };
-    this.mvProUniFiesRH = function() {
+    this.mvProUniFiesRH = function () {
         if (this.posY <= 60) {
             this.posY += 1;
         }
@@ -85,7 +85,7 @@ function Sprite(img) {
         }
 
     };
-    this.mvCantina = function() {
+    this.mvCantina = function () {
         if (this.posY <= 60) {
             this.posY += 1;
         }
@@ -126,9 +126,105 @@ function Sprite(img) {
             }
         }
     };
+    this.mvAuditorio = function () {
+        if (this.posY <= 60) {
+            this.posY += 1;
+        }
+        if (this.posY == 61) {
+            if (this.posX >= 495) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 494) {
+            if (this.posY <= 90) {
+                this.posY += 1;
+            } else if (this.posY < 300) {
+                this.aux = true;
+            }
+        }
 
 
-    this.move = function() {
+        if (this.aux) {
+            this.posY += 0.5;
+            this.posX -= 1;
+            if (this.posX == 360) {
+                this.aux = false;
+            }
+        }
+        if (this.posX == 360) {
+            if (this.posY <= 180) {
+                this.posY += 1;
+            }
+        }
+        if (this.posY == 181) {
+            if (this.posX >= 310) {
+                this.posX -= 1;
+            }
+
+        }
+
+    };
+    this.mvLab2 = function () {
+        if (this.posY <= 60) {
+            this.posY += 1;
+        }
+        if (this.posY == 61) {
+            if (this.posX >= 32) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 31) {
+            if (this.posY <= 290) {
+                this.posY += 1;
+            }
+        }
+        if (this.posY == 291) {
+            if (this.posX >= -32) {
+                this.posX -= 1;
+            }
+        }
+    };
+    this.mvXerox = function () {
+        if (this.posY <= 60) {
+            this.posY += 1;
+        }
+        if (this.posY == 61) {
+            if (this.posX >= 495) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 494) {
+            if (this.posY <= 90) {
+                this.posY += 1;
+            } else if (this.posY < 300) {
+                this.aux = true;
+            }
+        }
+        if (this.aux) {
+            this.posY += 0.5;
+            this.posX -= 1;
+            if (this.posX == 380) {
+                this.aux = false;
+            }
+        }
+        if (this.posY == 148) {
+            if (this.posX >= 206) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 205) {
+            if (this.posY <= 178) {
+                this.posY += 1;
+            }
+        }
+        if (this.posY == 179) {
+            if (this.posX >= 175) {
+                this.posX -= 1;
+            }
+        }
+    };
+
+    this.move = function () {
 
         if (this.mvRight) {
             this.posX += this.speed;
@@ -148,7 +244,7 @@ function Sprite(img) {
     };
 
 
-    this.animacao = function() {
+    this.animacao = function () {
         if (this.mvLeft || this.mvUp || this.mvRight || this.mvDown) {
             //Caso qualquer seta seja pressionada, o contador de animação é incrementado
             this.countAnim++;
