@@ -4,7 +4,7 @@ function Sprite(img) {
     this.srcX = this.srcY = 0;
     this.width = 119;
     this.height = 51;
-    this.speed = 3;
+    this.speed = 1;
     this.posX = 570;
     this.posY = 0;
     this.img = img;
