@@ -77,20 +77,24 @@ window.onload = function () {
     function verificarLocal() {
         document.getElementById("submit").onclick = function (e) {
             switch (local.value) {
-                case "recep":
-                    mover = true;
-
+                case "biblioteca":
+                    mover = "biblioteca";
+                    personagem.resetarMV();
                     break;
-                case "dti":
-                    alert("dti");
+                case "lab2":
+                    mover = "lab2";
+                    personagem.resetarMV();
                     break;
             }
             e.preventDefault();
         };
     }
     function moverLocal(mv) {
-        if (mv) {
-            personagem.mvRecepCoord();
+        if (mv == "biblioteca") {
+            personagem.mvBiblioteca();
+        }
+        if(mv == "lab2"){
+            personagem.mvLab2()
         }
     }
 

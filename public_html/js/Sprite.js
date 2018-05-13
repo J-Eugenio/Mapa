@@ -14,6 +14,7 @@ function Sprite(img, mapa) {
     this.img = img;
     this.mapa = mapa;
     this.aux = false;
+    this.resetar = false;
     this.mvRight = this.mvLeft = this.mvUp = this.mvDown = false;
     //Metodos
 
@@ -28,6 +29,12 @@ function Sprite(img, mapa) {
     };
 
     //Mover
+    this.resetarMV = function () {
+        this.posX = 570;
+        this.posY = 0;
+        this.srcY = this.height - 51;
+        this.mapaY = 0;
+    };
     this.mvBiblioteca = function () {
         if (this.posY <= 60) {
             this.posY += 1;
@@ -62,13 +69,11 @@ function Sprite(img, mapa) {
         if (this.posY == 477 && this.posX <= 600) {
             this.posX += 1;
 
-            if (this.posY == 477 && this.posX == 600)
-            {
-                this.posX = 570;
-                this.posY = 0;
-                this.srcY = this.height - 51;
-            }
-
+        }
+        if(this.posY == 477 && this.posX == 601) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
         }
 
     };
@@ -262,7 +267,7 @@ function Sprite(img, mapa) {
                 this.posY += 1;
             }
         }
-        if (this.posY == 497 && this.posX >=360 && this.posX <= 380 && this.mapaY == 0) {
+        if (this.posY == 497 && this.posX >= 360 && this.posX <= 380 && this.mapaY == 0) {
             if (this.posX >= 360 && this.posX <= 379) {
                 this.posX += 1;
                 this.srcY = this.height;
@@ -279,7 +284,7 @@ function Sprite(img, mapa) {
         if (this.mapaY == 124) {
             if (this.posX >= 300) {
                 this.posX -= 1;
-            }else if (this.posY >= 404) {
+            } else if (this.posY >= 404) {
                 this.posY -= 1;
             }
         }
