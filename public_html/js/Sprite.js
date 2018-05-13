@@ -1,6 +1,10 @@
 
-function Sprite(img) {
-    //Variaveis
+function Sprite(img, mapa) {
+    //variaveis do mapa
+    this.mapaX = -4;
+    this.mapaY = 0;
+    this.size = 635;
+    //Variaveis do personagem
     this.srcX = this.srcY = 0;
     this.width = 119;
     this.height = 51;
@@ -8,6 +12,7 @@ function Sprite(img) {
     this.posX = 570;
     this.posY = 0;
     this.img = img;
+    this.mapa = mapa;
     this.aux = false;
     this.mvRight = this.mvLeft = this.mvUp = this.mvDown = false;
     //Metodos
@@ -15,6 +20,10 @@ function Sprite(img) {
     //Desenha
     this.draw = function (ctx) {
         ctx.drawImage(this.img, this.srcX, this.srcY, this.width, this.height, this.posX, this.posY, this.width, this.height);
+        //this.animacao();
+    };
+    this.drawMapa = function (ctx, width, height) {
+        ctx.drawImage(this.mapa, this.mapaX, this.mapaY, this.size, this.size, 0, 0, width, height);
         //this.animacao();
     };
 
@@ -222,6 +231,59 @@ function Sprite(img) {
                 this.posX -= 1;
             }
         }
+
+
+    };
+    this.mvRecepCoord = function () {
+        if (this.posY <= 60) {
+            this.posY += 1;
+        }
+        if (this.posY == 61) {
+            if (this.posX >= 495) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 494) {
+            if (this.posY <= 90) {
+                this.posY += 1;
+            } else if (this.posY < 300) {
+                this.aux = true;
+            }
+        }
+        if (this.aux) {
+            this.posY += 0.5;
+            this.posX -= 1;
+            if (this.posX == 360) {
+                this.aux = false;
+            }
+        }
+        if (this.posX == 360) {
+            if (this.posY >= 158 && this.posY <= 496) {
+                this.posY += 1;
+            }
+        }
+        if (this.posY == 497 && this.posX >=360 && this.posX <= 380 && this.mapaY == 0) {
+            if (this.posX >= 360 && this.posX <= 379) {
+                this.posX += 1;
+                this.srcY = this.height;
+            }
+        }
+        if (this.posX == 380 && this.posY == 497) {
+            if (this.mapaY <= 123) {
+                this.mapaY += 1;
+                this.srcY = this.height - 51;
+            } else {
+                this.posY += 1;
+            }
+        }
+        if (this.mapaY == 124) {
+            if (this.posX >= 300) {
+                this.posX -= 1;
+            }else if (this.posY >= 404) {
+                this.posY -= 1;
+            }
+        }
+
     };
 
     this.move = function () {
@@ -239,6 +301,7 @@ function Sprite(img) {
         } else
         if (this.mvDown) {
             this.posY += this.speed;
+            this.mapaY += 1;
         }
 
     };
