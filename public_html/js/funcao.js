@@ -8,7 +8,7 @@ window.onload = function () {
     boy.src = "img/Boy.png";
     var mapa = new Image();
     mapa.src = "img/mapa.jpg";
-    
+
     var personagem = new Sprite(boy, mapa);
 
 
@@ -18,14 +18,14 @@ window.onload = function () {
     var div3 = document.getElementById("textDiv3");
     var local = document.getElementById("input")
 
-    boy.onload = function(){
-      init();  
+    boy.onload = function () {
+        init();
     };
     function init() {
         loop();
     }
 
-    
+
     window.addEventListener("keydown", keydownHandler, false);
     window.addEventListener("keyup", keyupHandler, false);
 
@@ -85,6 +85,30 @@ window.onload = function () {
                     mover = "lab2";
                     personagem.resetarMV();
                     break;
+                case "fies":
+                    mover = "fies";
+                    personagem.resetarMV();
+                    break;
+                case "prouni":
+                    mover = "prouni";
+                    personagem.resetarMV();
+                    break;
+                case "rh":
+                    mover = "rh";
+                    personagem.resetarMV();
+                    break;
+                case "cantina":
+                    mover = "cantina";
+                    personagem.resetarMV();
+                    break;
+                case "auditorio":
+                    mover = "auditorio";
+                    personagem.resetarMV();
+                    break;
+                case "xerox":
+                    mover = "xerox";
+                    personagem.resetarMV();
+                    break;
             }
             e.preventDefault();
         };
@@ -93,14 +117,27 @@ window.onload = function () {
         if (mv == "biblioteca") {
             personagem.mvBiblioteca();
         }
-        if(mv == "lab2"){
-            personagem.mvLab2()
+        if (mv == "lab2") {
+            personagem.mvLab2();
         }
+        if (mv == "fies" || mv == "rh" || mv == "prouni") {
+            personagem.mvProUniFiesRH();
+        }
+        if (mv == "cantina") {
+            personagem.mvCantina();
+        }
+        if (mv == "auditorio") {
+            personagem.mvAuditorio();
+        }
+        if (mv == "xerox") {
+            personagem.mvXerox();
+        }
+
     }
 
     function render() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        personagem.drawMapa(ctx,canvas.width, canvas.height);
+        personagem.drawMapa(ctx, canvas.width, canvas.height);
         personagem.draw(ctx);
     }
 
