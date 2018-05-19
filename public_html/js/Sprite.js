@@ -70,7 +70,7 @@ function Sprite(img, mapa) {
             this.posX += 1;
 
         }
-        if(this.posY == 477 && this.posX == 601) {
+        if (this.posY == 477 && this.posX == 601) {
             this.posX = 570;
             this.posY = 0;
             this.srcY = this.height - 51;
@@ -290,6 +290,214 @@ function Sprite(img, mapa) {
         }
 
     };
+    this.mvBanheiroM = function () {
+        if (this.posY <= 60) {
+            this.posY += 1;
+        }
+        if (this.posY == 61) {
+            if (this.posX >= 495) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 494) {
+            if (this.posY <= 90) {
+                this.posY += 1;
+            }
+        }
+        if (this.posY == 91) {
+            if (this.posX >= 474) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 473) {
+            if (this.posY <= 128) {
+                this.posY += 1;
+            }
+        }
+        if (this.posY == 129) {
+            if (this.posX >= 452) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 451) {
+            if (this.posY <= 270) {
+                this.posY += 1;
+                this.srcY = this.height;//virar personagem para direita
+            }
+        }
+        if (this.posY == 270) {
+            if (this.posX <= 577) {
+                this.posX += 1;
+            }
+        }
+        if (this.posX == 578) {
+            if (this.posY <= 307) {
+                this.posY += 1;
+            }
+        }
+    };
+    this.mvBanheiroF = function () {
+        if (this.posY <= 60) {
+            this.posY += 1;
+        }
+        if (this.posY == 61) {
+            if (this.posX >= 495) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 494) {
+            if (this.posY <= 90) {
+                this.posY += 1;
+            }
+        }
+        if (this.posY == 91) {
+            if (this.posX >= 474) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 473) {
+            if (this.posY <= 128) {
+                this.posY += 1;
+            }
+        }
+        if (this.posY == 129) {
+            if (this.posX >= 452) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 451) {
+            if (this.posY <= 270) {
+                this.posY += 1;
+                this.srcY = this.height;//virar personagem para direita
+            }
+        }
+        if (this.posY == 270) {
+            if (this.posX <= 623) {
+                this.posX += 1;
+            }
+        }
+        if (this.posX == 622) {
+            if (this.posY <= 307) {
+                this.posY += 1;
+            }
+        }
+    };
+    this.mvFinanceiro = function () {
+        if (this.posY <= 60) {
+            this.posY += 1;
+        }
+        if (this.posY == 61) {
+            if (this.posX >= 495) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 494) {
+            if (this.posY <= 90) {
+                this.posY += 1;
+            } else if (this.posY < 300) {
+                this.aux = true;
+            }
+        }
+
+
+        if (this.aux) {
+            this.posY += 0.5;
+            this.posX -= 1;
+            if (this.posX == 360) {
+                this.aux = false;
+            }
+        }
+        if (this.posY >= 158 && this.posY <= 339) {
+            this.posY += 1;
+            if (this.posY == 340) {
+                this.srcY = this.height;
+            }
+        }
+        if (this.posY == 340) {
+            if (this.posX <= 430) {
+                this.posX += 1;
+            }
+        }
+        if (this.posX == 431) {
+            if (this.posY <= 360) {
+                this.posY += 1;
+            }
+        }
+    };
+    this.mvAcademico = function () {
+        if (this.posY <= 60) {
+            this.posY += 1;
+        }
+        if (this.posY == 61) {
+            if (this.posX >= 495) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 494) {
+            if (this.posY <= 90) {
+                this.posY += 1;
+            } else if (this.posY < 300) {
+                this.aux = true;
+            }
+        }
+
+
+        if (this.aux) {
+            this.posY += 0.5;
+            this.posX -= 1;
+            if (this.posX == 360) {
+                this.aux = false;
+            }
+        }
+        if (this.posY >= 158 && this.posY <= 402) {
+            this.posY += 1;
+            if (this.posY == 403) {
+                this.srcY = this.height;
+            }
+        }
+        if (this.posY == 403) {
+            if (this.posX <= 430) {
+                this.posX += 1;
+            }
+        }
+    };
+    this.mvDTI = function () {
+        if (this.posY <= 60) {
+            this.posY += 1;
+        }
+        if (this.posY == 61) {
+            if (this.posX >= 495) {
+                this.posX -= 1;
+            }
+        }
+        if (this.posX == 494) {
+            if (this.posY <= 90) {
+                this.posY += 1;
+            } else if (this.posY < 300) {
+                this.aux = true;
+            }
+        }
+
+
+        if (this.aux) {
+            this.posY += 0.5;
+            this.posX -= 1;
+            if (this.posX == 360) {
+                this.aux = false;
+            }
+        }
+        if (this.posY >= 158 && this.posY <= 402) {
+            this.posY += 1;
+            if (this.posY == 403) {
+                //this.srcY = this.height;
+            }
+        }
+        if (this.posY == 403) {
+            if (this.posX >= 400) {
+                this.posX -= 1;
+            }
+        }
+    };
 
     this.move = function () {
 
@@ -306,7 +514,7 @@ function Sprite(img, mapa) {
         } else
         if (this.mvDown) {
             this.posY += this.speed;
-            this.mapaY += 1;
+            //this.mapaY += 1;
         }
 
     };

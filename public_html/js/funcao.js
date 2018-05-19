@@ -109,6 +109,30 @@ window.onload = function () {
                     mover = "xerox";
                     personagem.resetarMV();
                     break;
+                case "recep":
+                    mover = "recep";
+                    personagem.resetarMV();
+                    break;
+                case "masculino":
+                    mover = "masculino";
+                    personagem.resetarMV();
+                    break;
+                case "feminino":
+                    mover = "feminino";
+                    personagem.resetarMV();
+                    break;
+                case "financeiro":
+                    mover = "financeiro";
+                    personagem.resetarMV();
+                    break;
+                case "academico":
+                    mover = "academico";
+                    personagem.resetarMV();
+                    break;
+                case "dti":
+                    mover = "dti";
+                    personagem.resetarMV();
+                    break;
             }
             e.preventDefault();
         };
@@ -131,6 +155,24 @@ window.onload = function () {
         }
         if (mv == "xerox") {
             personagem.mvXerox();
+        }
+        if (mv == "recep") {
+            personagem.mvRecepCoord();
+        }
+        if (mv == "masculino") {
+            personagem.mvBanheiroM();
+        }
+        if (mv == "feminino") {
+            personagem.mvBanheiroF();
+        }
+        if (mv == "financeiro") {
+            personagem.mvFinanceiro();
+        }
+        if (mv == "academico") {
+            personagem.mvAcademico();
+        }
+        if (mv == "dti") {
+            personagem.mvDTI();
         }
 
     }
