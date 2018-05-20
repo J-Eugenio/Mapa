@@ -5,15 +5,17 @@ function Sprite(img, mapa) {
     this.mapaY = 0;
     this.size = 635;
     //Variaveis do personagem
-    this.srcX = this.srcY = 0;
-    this.width = 119;
-    this.height = 51;
+    this.srcX = 0;
+    this.srcY = 0;
+    this.width = 24;
+    this.height = 32;
     this.speed = 1;
-    this.posX = 570;
-    this.posY = 0;
+    this.posX = 669;
+    this.posY = 20;
     this.img = img;
     this.mapa = mapa;
     this.aux = false;
+    this.animar = false;
     this.resetar = false;
     this.mvRight = this.mvLeft = this.mvUp = this.mvDown = false;
     //Metodos
@@ -21,7 +23,7 @@ function Sprite(img, mapa) {
     //Desenha
     this.draw = function(ctx) {
         ctx.drawImage(this.img, this.srcX, this.srcY, this.width, this.height, this.posX, this.posY, this.width, this.height);
-        //this.animacao();
+        this.animacao();
     };
     this.drawMapa = function(ctx, width, height) {
         ctx.drawImage(this.mapa, this.mapaX, this.mapaY, this.size, this.size, 0, 0, width, height);
@@ -30,154 +32,193 @@ function Sprite(img, mapa) {
 
     //Mover
     this.resetarMV = function() {
-        this.posX = 570;
-        this.posY = 0;
-        this.srcY = this.height - 51;
+        this.posX = 669;
+        this.posY = 20;
+        this.srcY = 0;
         this.mapaY = 0;
+        this.aux = false;
+        this.animar = true;
     };
     this.mvBiblioteca = function() {
-        if (this.posY <= 60) {
+        if (this.posY <= 80) {
             this.posY += 1;
         }
-        if (this.posY == 61) {
-            if (this.posX >= 495) {
+        if (this.posY == 81) {
+            if (this.posX >= 596) {
                 this.posX -= 1;
+                this.srcY = this.height * 2;//virar esquerda
             }
         }
-        if (this.posX == 494) {
-            if (this.posY <= 90) {
+        if (this.posX == 595) {
+            if (this.posY <= 110) {
                 this.posY += 1;
+                this.srcY = 0;//virar para baixo
             } else if (this.posY < 300) {
                 this.aux = true;
             }
         }
-
-
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= 1;
-            if (this.posX == 360) {
+            this.srcY = this.height * 2;//virar esquerda
+            if (this.posX == 460) {
                 this.aux = false;
             }
         }
-        if (this.posY >= 158 && this.posY <= 476) {
-            this.posY += 1;
-            if (this.posY == 476) {
-                this.srcY = this.height;
+        if (this.posX == 460) {
+            if (this.posY <= 485) {
+                this.posY += 1;
+                this.srcY = 0;//virar para baixo
             }
         }
-        if (this.posY == 477 && this.posX <= 600) {
-            this.posX += 1;
-
+        if (this.posY == 485.5) {
+            if (this.posX <= 699) {
+                this.posX += 1;
+                this.srcY = this.height * 3;//virar direita
+            }
         }
-        if (this.posY == 477 && this.posX == 601) {
-            this.posX = 570;
-            this.posY = 0;
-            this.srcY = this.height - 51;
+        if (this.posX == 700 && this.posY == 485.5) {
+            this.posX = 669;
+            this.posY = 20;
+            this.srcY = 0;
+            this.mapaY = 0;
+            this.aux = false;
         }
-
     };
     this.mvProUniFiesRH = function() {
-        if (this.posY <= 60) {
+        if (this.posY <= 80) {
             this.posY += 1;
         }
-        if (this.posY == 61) {
-            if (this.posX >= 495) {
+        if (this.posY == 81) {
+            if (this.posX >= 596) {
                 this.posX -= 1;
+                this.srcY = this.height * 2;//virar esquerda
             }
         }
-        if (this.posX == 494) {
-            if (this.posY <= 90) {
+        if (this.posX == 595) {
+            if (this.posY <= 105) {
                 this.posY += 1;
+                this.srcY = 0;//virar para baixo
+            } else if (this.posY < 300) {
+                this.aux = true;
             }
         }
-        if (this.posY == 91) {
-            if (this.posX <= 576) {
+        if (this.posY == 106) {
+            if (this.posX <= 669) {
                 this.posX += 1;
-                this.srcY = this.height;//virar personagem para direita
+                this.srcY = this.height * 3;//virar direita
             }
+        }
+        if (this.posX == 670 && this.posY == 106) {
+            this.posX = 669;
+            this.posY = 20;
+            this.srcY = 0;
+            this.mapaY = 0;
+            this.aux = false;
         }
 
     };
     this.mvCantina = function() {
-        if (this.posY <= 60) {
+        if (this.posY <= 80) {
             this.posY += 1;
         }
-        if (this.posY == 61) {
-            if (this.posX >= 495) {
+        if (this.posY == 81) {
+            if (this.posX >= 596) {
                 this.posX -= 1;
+                this.srcY = this.height * 2;//virar esquerda
             }
         }
-        if (this.posX == 494) {
-            if (this.posY <= 90) {
+        if (this.posX == 595) {
+            if (this.posY <= 105) {
                 this.posY += 1;
-            }
-        }
-        if (this.posY == 91) {
-            if (this.posX >= 474) {
-                this.posX -= 1;
-            }
-        }
-        if (this.posX == 473) {
-            if (this.posY <= 128) {
-                this.posY += 1;
-            }
-        }
-        if (this.posY == 129) {
-            if (this.posX >= 452) {
-                this.posX -= 1;
-            }
-        }
-        if (this.posX == 451) {
-            if (this.posY <= 196) {
-                this.posY += 1;
-                this.srcY = this.height;//virar personagem para direita
-            }
-        }
-        if (this.posY == 197) {
-            if (this.posX <= 577) {
-                this.posX += 1;
-            }
-        }
-    };
-    this.mvAuditorio = function() {
-        if (this.posY <= 60) {
-            this.posY += 1;
-        }
-        if (this.posY == 61) {
-            if (this.posX >= 495) {
-                this.posX -= 1;
-            }
-        }
-        if (this.posX == 494) {
-            if (this.posY <= 90) {
-                this.posY += 1;
+                this.srcY = 0;//virar para baixo
             } else if (this.posY < 300) {
                 this.aux = true;
             }
         }
+        if (this.posY == 106) {
+            if (this.posX >= 578) {
+                this.posX -= 1;
+                this.srcY = this.height * 2;//virar esquerda
+            }
+        }
+        if (this.posX == 577) {
+            if (this.posY <= 214) {
+                this.posY += 1;
+                this.srcY = 0;//virar para baixo
+            }
+        }
+        if (this.posY == 215) {
+            if (this.posX <= 682) {
+                this.posX += 1;
+                this.srcY = this.height * 3;//virar direita
+            }
+        }
+        if (this.posX == 683) {
+            if (this.posY >= 187) {
+                this.posY -= 1;
+                this.srcY = this.height; //virar para cima
+            }
+        }
 
-
+        if (this.posX == 683 && this.posY == 186) {
+            this.posX = 669;
+            this.posY = 20;
+            this.srcY = 0;
+            this.mapaY = 0;
+            this.aux = false;
+            this.animar = true;
+        }
+    };
+    this.mvAuditorio = function() {
+        if (this.posY <= 80) {
+            this.posY += 1;
+        }
+        if (this.posY == 81) {
+            if (this.posX >= 596) {
+                this.posX -= 1;
+                this.srcY = this.height * 2;//virar esquerda
+            }
+        }
+        if (this.posX == 595) {
+            if (this.posY <= 110) {
+                this.posY += 1;
+                this.srcY = 0;//virar para baixo
+            } else if (this.posY < 300) {
+                this.aux = true;
+            }
+        }
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= 1;
-            if (this.posX == 360) {
+            this.srcY = this.height * 2;//virar esquerda
+            if (this.posX == 460) {
                 this.aux = false;
             }
         }
-        if (this.posX == 360) {
-            if (this.posY <= 180) {
+        if (this.posX == 460) {
+            if (this.posY <= 197.5) {
                 this.posY += 1;
+                this.srcY = 0;//virar para baixo
             }
         }
-        if (this.posY == 181) {
-            if (this.posX >= 310) {
+        if (this.posY == 198.5) {
+            if (this.posX >= 403) {
                 this.posX -= 1;
+                this.srcY = this.height * 2;//virar esquerda
             }
-
+        }
+        if (this.posX == 402 && this.posY == 198.5) {
+            this.posX = 669;
+            this.posY = 20;
+            this.srcY = 0;
+            this.mapaY = 0;
+            this.aux = false;
+            this.animar = true;
         }
 
     };
+    //COTINUAR
     this.mvLab2 = function() {
         if (this.posY <= 60) {
             this.posY += 1;
@@ -196,6 +237,12 @@ function Sprite(img, mapa) {
             if (this.posX >= -32) {
                 this.posX -= 1;
             }
+        }
+        if (this.posX == -33 && this.posY == 291) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
     };
     this.mvXerox = function() {
@@ -236,7 +283,12 @@ function Sprite(img, mapa) {
                 this.posX -= 1;
             }
         }
-
+        if (this.posX == 174 && this.posY == 179) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
 
     };
     this.mvRecepCoord = function() {
@@ -288,7 +340,12 @@ function Sprite(img, mapa) {
                 this.posY -= 1;
             }
         }
-
+        if (this.posX == 299 && this.posY == 403 && this.mapaY == 124) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
     };
     this.mvBanheiroM = function() {
         if (this.posY <= 60) {
@@ -334,6 +391,12 @@ function Sprite(img, mapa) {
             if (this.posY <= 307) {
                 this.posY += 1;
             }
+        }
+        if (this.posX == 578 && this.posY == 308) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
     };
     this.mvBanheiroF = function() {
@@ -381,6 +444,12 @@ function Sprite(img, mapa) {
                 this.posY += 1;
             }
         }
+        if (this.posX == 622 && this.posY == 308) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
     };
     this.mvFinanceiro = function() {
         if (this.posY <= 60) {
@@ -398,8 +467,6 @@ function Sprite(img, mapa) {
                 this.aux = true;
             }
         }
-
-
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= 1;
@@ -423,6 +490,12 @@ function Sprite(img, mapa) {
                 this.posY += 1;
             }
         }
+        if (this.posX == 431 && this.posY == 361) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
     };
     this.mvAcademico = function() {
         if (this.posY <= 60) {
@@ -440,8 +513,6 @@ function Sprite(img, mapa) {
                 this.aux = true;
             }
         }
-
-
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= 1;
@@ -460,6 +531,12 @@ function Sprite(img, mapa) {
                 this.posX += 1;
             }
         }
+        if (this.posX == 431 && this.posY == 403) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
     };
     this.mvDTI = function() {
         if (this.posY <= 60) {
@@ -477,8 +554,6 @@ function Sprite(img, mapa) {
                 this.aux = true;
             }
         }
-
-
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= 1;
@@ -501,6 +576,12 @@ function Sprite(img, mapa) {
             if (this.posY <= 444) {
                 this.posY += 1;
             }
+        }
+        if (this.posX == 304 && this.posY == 445) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
     };
     this.mvLab1 = function() {
@@ -542,6 +623,12 @@ function Sprite(img, mapa) {
                 this.posY += 1;
             }
         }
+        if (this.posX == 219 && this.posY == 445) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
     };
     this.mvSalaProfessores = function() {
         if (this.posY <= 60) {
@@ -573,6 +660,12 @@ function Sprite(img, mapa) {
             if (this.posX >= 68) {
                 this.posX -= 1;
             }
+        }
+        if (this.posX == 67 && this.posY == 401) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
     };
     this.mvNDE = function() {
@@ -610,6 +703,12 @@ function Sprite(img, mapa) {
             if (this.posY <= 475) {
                 this.posY += 1;
             }
+        }
+        if (this.posX == 67 && this.posY == 476) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
     };
     this.mvCoordServSocial = function() {
@@ -664,6 +763,12 @@ function Sprite(img, mapa) {
                     this.posX -= 1;
                 }
             }
+        }
+        if (this.posX == 269 && this.posY == 419 && this.mapaY == 124) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
 
     };
@@ -720,6 +825,12 @@ function Sprite(img, mapa) {
                 }
             }
         }
+        if (this.posX == 269 && this.posY == 464 && this.mapaY == 124) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
 
     };
     this.mvCoordFisio = function() {
@@ -775,6 +886,12 @@ function Sprite(img, mapa) {
                 }
             }
         }
+        if (this.posX == 269 && this.posY == 494 && this.mapaY == 124) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
     };
     this.mvCoordADM = function() {
         if (this.posY <= 60) {
@@ -828,6 +945,12 @@ function Sprite(img, mapa) {
                     this.posX -= 1;
                 }
             }
+        }
+        if (this.posX == 274 && this.posY == 531 && this.mapaY == 124) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
     };
     this.mvCoordEmfermagem = function() {
@@ -890,6 +1013,12 @@ function Sprite(img, mapa) {
                 this.mapaY += 1;
             }
         }
+        if (this.posX == 285 && this.posY == 531 && this.mapaY == 150) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
     };
     this.mvCoordPsicologia = function() {
         if (this.posY <= 60) {
@@ -951,6 +1080,12 @@ function Sprite(img, mapa) {
                 this.mapaY += 1;
             }
         }
+        if (this.posX == 299 && this.posY == 531 && this.mapaY == 150) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
     };
     this.mvNAPI = function() {
         if (this.posY <= 60) {
@@ -1007,6 +1142,12 @@ function Sprite(img, mapa) {
             if (this.mapaY <= 149) {
                 this.mapaY += 1;
             }
+        }
+        if (this.posX == 482 && this.posY == 539 && this.mapaY == 150) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
 
 
@@ -1071,6 +1212,12 @@ function Sprite(img, mapa) {
                 }
             }
         }
+        if (this.posX == 520 && this.posY == 526 && this.mapaY == 146) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
 
     };
     this.mvCoordEducFisica = function() {
@@ -1131,6 +1278,12 @@ function Sprite(img, mapa) {
                 }
             }
         }
+        if (this.posX == 548 && this.posY == 526 && this.mapaY == 151) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
 
     };
     this.mvCoordAnalise = function() {
@@ -1184,7 +1337,12 @@ function Sprite(img, mapa) {
                 this.posX += 1;
             }
         }
-
+        if (this.posX == 582 && this.posY == 517 && this.mapaY == 124) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
 
     };
     this.mvCantina2 = function() {
@@ -1254,6 +1412,12 @@ function Sprite(img, mapa) {
                 this.posX += 1;
                 this.srcY = this.height;//vira para direita
             }
+        }
+        if (this.posX == 503 && this.posY == 499 && this.mapaY == 471) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
     };
     this.mvSalaEstudosExterna = function() {
@@ -1329,6 +1493,12 @@ function Sprite(img, mapa) {
                 }
             }
         }
+        if (this.posX == 579 && this.posY == 540 && this.mapaY == 648) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
 
     };
     this.mvLabHardware = function() {
@@ -1402,6 +1572,12 @@ function Sprite(img, mapa) {
                     this.posY += 1;
                 }
             }
+        }
+        if (this.posX == 174 && this.posY == 540 && this.mapaY == 646) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
 
     };
@@ -1477,6 +1653,12 @@ function Sprite(img, mapa) {
                 }
             }
         }
+        if (this.posX == -21 && this.posY == 540 && this.mapaY == 646) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
 
     };
     this.mvBanheiroFBC = function() {
@@ -1550,6 +1732,12 @@ function Sprite(img, mapa) {
                     this.posY += 1;
                 }
             }
+        }
+        if (this.posX == -65 && this.posY == 540 && this.mapaY == 646) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
 
     };
@@ -1630,6 +1818,12 @@ function Sprite(img, mapa) {
                 }
             }
         }
+        if (this.posX == -20 && this.posY == 473 && this.mapaY == 646) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
 
     };
     this.mvNexas = function() {
@@ -1708,6 +1902,12 @@ function Sprite(img, mapa) {
                     this.posX -= 1;
                 }
             }
+        }
+        if (this.posX == -20 && this.posY == 430 && this.mapaY == 646) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
 
     };
@@ -1788,6 +1988,12 @@ function Sprite(img, mapa) {
                 }
             }
         }
+        if (this.posX == -20 && this.posY == 398 && this.mapaY == 646) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
 
     };
     this.mvDeposito = function() {
@@ -1862,6 +2068,12 @@ function Sprite(img, mapa) {
                     this.posY -= 1;
                 }
             }
+        }
+        if (this.posX == 279 && this.posY == 459 && this.mapaY == 646) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
         }
 
     };
@@ -1938,6 +2150,12 @@ function Sprite(img, mapa) {
                 }
             }
         }
+        if (this.posX == 209 && this.posY == 459 && this.mapaY == 646) {
+            this.posX = 570;
+            this.posY = 0;
+            this.srcY = this.height - 51;
+            this.mapaY = 0;
+        }
 
     };
     this.mvCopex = function() {
@@ -2013,7 +2231,6 @@ function Sprite(img, mapa) {
                 }
             }
         }
-
         if (this.posX == 141 && this.posY == 459 && this.mapaY == 646) {
             this.posX = 570;
             this.posY = 0;
@@ -2028,11 +2245,9 @@ function Sprite(img, mapa) {
 
         if (this.mvRight) {
             this.posX += this.speed;
-            this.srcY = this.height;
         } else
         if (this.mvLeft) {
             this.posX -= this.speed;
-            this.srcY = this.height - 51;
         } else
         if (this.mvUp) {
             this.posY -= this.speed;
@@ -2046,15 +2261,13 @@ function Sprite(img, mapa) {
 
 
     this.animacao = function() {
-        if (this.mvLeft || this.mvUp || this.mvRight || this.mvDown) {
-            //Caso qualquer seta seja pressionada, o contador de animação é incrementado
+        if (this.animar) {
             this.countAnim++;
-            if (this.countAnim >= 31) {
+            if (this.countAnim >= 40) {
                 this.countAnim = 0;
             }
-            this.srcX = Math.floor(this.countAnim / 1) * this.width;
+            this.srcX = Math.floor(this.countAnim / 5) * this.width;
         } else {
-            //Caso nenhuma tecla seja pressionada, o contador de animação é zerado e a imagem do personagem parado é exibida
             this.srcX = 0;
             this.countAnim = 0;
         }
