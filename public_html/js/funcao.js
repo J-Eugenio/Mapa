@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function() {
 
     var canvas = document.querySelector("canvas");
     var ctx = canvas.getContext("2d");
@@ -10,15 +10,13 @@ window.onload = function () {
     mapa.src = "img/mapa.jpg";
 
     var personagem = new Sprite(boy, mapa);
-
-
-
+    //DEBUG
     var div = document.getElementById("textDiv");
     var div2 = document.getElementById("textDiv2");
     var div3 = document.getElementById("textDiv3");
     var local = document.getElementById("input")
-
-    boy.onload = function () {
+    //---------------------
+    boy.onload = function() {
         init();
     };
     function init() {
@@ -75,7 +73,7 @@ window.onload = function () {
     }
     var mover = false;
     function verificarLocal() {
-        document.getElementById("submit").onclick = function (e) {
+        document.getElementById("submit").onclick = function(e) {
             switch (local.value) {
                 case "biblioteca":
                     mover = "biblioteca";
@@ -133,6 +131,102 @@ window.onload = function () {
                     mover = "dti";
                     personagem.resetarMV();
                     break;
+                case "lab1":
+                    mover = "lab1";
+                    personagem.resetarMV();
+                    break;
+                case "sala dos professores":
+                    mover = "sala dos professores";
+                    personagem.resetarMV();
+                    break;
+                case "nde":
+                    mover = "nde";
+                    personagem.resetarMV();
+                    break;
+                case "coord servico social":
+                    mover = "coord servico social";
+                    personagem.resetarMV();
+                    break;
+                case "coord contabeis":
+                    mover = "coord contabeis";
+                    personagem.resetarMV();
+                    break;
+                case "coord fisio":
+                    mover = "coord fisio";
+                    personagem.resetarMV();
+                    break;
+                case "coord adm":
+                    mover = "coord adm";
+                    personagem.resetarMV();
+                    break;
+                case "coord enfermagem":
+                    mover = "coord enfermagem";
+                    personagem.resetarMV();
+                    break;
+                case "coord psicologia":
+                    mover = "coord psicologia";
+                    personagem.resetarMV();
+                    break;
+                case "NAPI":
+                    mover = "NAPI";
+                    personagem.resetarMV();
+                    break;
+                case "coord pedagogica":
+                    mover = "coord pedagogica";
+                    personagem.resetarMV();
+                    break;
+                case "coord educacao fisica":
+                    mover = "coord educacao fisica";
+                    personagem.resetarMV();
+                    break;
+                case "coord analise":
+                    mover = "coord analise";
+                    personagem.resetarMV();
+                    break;
+                case "cantina2":
+                    mover = "cantina2";
+                    personagem.resetarMV();
+                    break;
+                case "sala de estudos externa":
+                    mover = "sala de estudos externa";
+                    personagem.resetarMV();
+                    break;
+                case "lab de hardware":
+                    mover = "lab de hardware";
+                    personagem.resetarMV();
+                    break;
+                case "banheiro masculino2":
+                    mover = "banheiro masculino2";
+                    personagem.resetarMV();
+                    break;
+                case "banheiro feminino2":
+                    mover = "banheiro feminino2";
+                    personagem.resetarMV();
+                    break;
+                case "marketing":
+                    mover = "marketing";
+                    personagem.resetarMV();
+                    break;
+                case "nexas":
+                    mover = "nexas";
+                    personagem.resetarMV();
+                    break;
+                case "copa":
+                    mover = "copa";
+                    personagem.resetarMV();
+                    break;
+                case "deposito":
+                    mover = "deposito";
+                    personagem.resetarMV();
+                    break;
+                case "reprografia":
+                    mover = "reprografia";
+                    personagem.resetarMV();
+                    break;
+                case "copex":
+                    mover = "copex";
+                    personagem.resetarMV();
+                    break;
             }
             e.preventDefault();
         };
@@ -174,15 +268,84 @@ window.onload = function () {
         if (mv == "dti") {
             personagem.mvDTI();
         }
-
+        if (mv == "lab1") {
+            personagem.mvLab1();
+        }
+        if (mv == "sala dos professores") {
+            personagem.mvSalaProfessores();
+        }
+        if (mv == "nde") {
+            personagem.mvNDE();
+        }
+        if (mv == "coord servico social") {
+            personagem.mvCoordServSocial();
+        }
+        if (mv == "coord contabeis") {
+            personagem.mvCoordCienContabeis();
+        }
+        if (mv == "coord fisio") {
+            personagem.mvCoordFisio();
+        }
+        if (mv == "coord adm") {
+            personagem.mvCoordADM();
+        }
+        if (mv == "coord enfermagem") {
+            personagem.mvCoordEmfermagem();
+        }
+        if (mv == "coord psicologia") {
+            personagem.mvCoordPsicologia();
+        }
+        if (mv == "NAPI") {
+            personagem.mvNAPI();
+        }
+        if (mv == "coord pedagogica") {
+            personagem.mvCoordPedagogica();
+        }
+        if (mv == "coord educacao fisica") {
+            personagem.mvCoordEducFisica();
+        }
+        if (mv == "coord analise") {
+            personagem.mvCoordAnalise();
+        }
+        if (mv == "cantina2") {
+            personagem.mvCantina2();
+        }
+        if (mv == "sala de estudos externa") {
+            personagem.mvSalaEstudosExterna();
+        }
+        if (mv == "lab de hardware") {
+            personagem.mvLabHardware();
+        }
+        if (mv == "banheiro masculino2") {
+            personagem.mvBanheiroMBC();
+        }
+        if (mv == "banheiro feminino2") {
+            personagem.mvBanheiroFBC();
+        }
+        if (mv == "marketing") {
+            personagem.mvMarketing();
+        }
+        if (mv == "nexas") {
+            personagem.mvNexas();
+        }
+        if (mv == "copa") {
+            personagem.mvCopa();
+        }
+        if (mv == "deposito") {
+            personagem.mvDeposito();
+        }
+        if (mv == "reprografia") {
+            personagem.mvReprografia();
+        }
+        if (mv == "copex") {
+            personagem.mvCopex();
+        }
     }
-
     function render() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         personagem.drawMapa(ctx, canvas.width, canvas.height);
         personagem.draw(ctx);
     }
-
     function update() {
         personagem.move();
     }
@@ -195,9 +358,6 @@ window.onload = function () {
         div3.textContent = personagem.mapaY;
         verificarLocal();
         moverLocal(mover);
-
     }
-
-
 };
 
