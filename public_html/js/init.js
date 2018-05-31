@@ -9,7 +9,9 @@ window.onload = function() {
     mapa.src = "img/mapa.jpg";
 
     var personagem = new Sprite(boy, mapa);
-    var local = document.getElementById("input");
+    var localBA = document.getElementById("cb_moverA");
+    var localBB = document.getElementById("cb_moverB");
+    var localBC = document.getElementById("cb_moverC");
     var mover;
     boy.onload = function() {
         init();
@@ -18,9 +20,9 @@ window.onload = function() {
         loop();
     }
 
-    function verificarLocal() {
-        document.getElementById("submit").onclick = function(e) {
-            switch (local.value) {
+    function verificarLocalBA(){
+        document.getElementById("submitBA").onclick = function(e) {
+            switch (localBA.value) {
                 case "biblioteca":
                     mover = "biblioteca";
                     personagem.resetarMV();
@@ -53,10 +55,6 @@ window.onload = function() {
                     mover = "xerox";
                     personagem.resetarMV();
                     break;
-                case "recep":
-                    mover = "recep";
-                    personagem.resetarMV();
-                    break;
                 case "masculino":
                     mover = "masculino";
                     personagem.resetarMV();
@@ -67,6 +65,17 @@ window.onload = function() {
                     break;
                 case "financeiro":
                     mover = "financeiro";
+                    personagem.resetarMV();
+                    break;            
+            }
+            e.preventDefault();
+        };
+    }
+    function verificarLocalBB(){
+                document.getElementById("submitBB").onclick = function(e) {
+            switch (localBB.value) {
+                case "recep":
+                    mover = "recep";
                     personagem.resetarMV();
                     break;
                 case "academico":
@@ -129,6 +138,14 @@ window.onload = function() {
                     mover = "coord analise";
                     personagem.resetarMV();
                     break;
+            }
+            e.preventDefault();
+        };
+        
+    }
+    function verificarLocalBC(){
+                document.getElementById("submitBC").onclick = function(e) {
+            switch (localBC.value) {
                 case "cantina2":
                     mover = "cantina2";
                     personagem.resetarMV();
@@ -176,6 +193,7 @@ window.onload = function() {
             }
             e.preventDefault();
         };
+        
     }
     function moverLocal(mv) {
         if (mv == "biblioteca") {
@@ -296,7 +314,9 @@ window.onload = function() {
     function loop() {
         requestAnimationFrame(loop, canvas);
         render();
-        verificarLocal();
+        verificarLocalBA();
+        verificarLocalBB();
+        verificarLocalBC();
         moverLocal(mover);
     }
 };

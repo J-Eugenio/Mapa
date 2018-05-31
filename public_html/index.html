@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
     <head>
         <title>Mapas-</title>
@@ -9,18 +10,99 @@
     <style type="text/css">
         canvas{
             border: solid 1px;
+            float: left;
         }
-        div{
-            font-weight: bold;
-            font-size: 20px;
+        div#div_moves{
+            border: 1px solid black;
+            height: 100px;
+            width: 100%;
         }
+        div#div_blocoA{
+            height: 100px;
+            width: 380px;
+            float: left;
+        }
+        div#div_blocoB{
+            height: 100px;
+            width: 500px;
+            float: left;
+
+        }
+        div#div_canvas{
+            border: 1px solid black;
+
+        }
+
     </style>
     <body>
-        <form method="get">
-            <input type="text" id="input" />
-            <input type="submit" id="submit" value="Enviar" />
-        </form><br>
-        <canvas width="800" height="600"></canvas>
+        <div id ="div_moves">
+            <div id ="div_blocoA">
+                <form method="get">
+                    <h3>Bloco A</h3>
+                    <select id = "cb_moverA">
+                        <option value="biblioteca">Biblioteca</option>
+                        <option value="lab2">Laboratorio 02</option>
+                        <option value="fies">Fies</option>
+                        <option value="fies">ProUni</option>
+                        <option value="fies">RH</option>              
+                        <option value="cantina">Cantina</option>
+                        <option value="auditorio">Auditorio</option>
+                        <option value="xerox">Xerox</option>
+                        <option value="masculino">Banheiro Masculino</option>
+                        <option value="feminino">Banheiro Feminino</option>
+                        <option value="financeiro">Financeiro</option>
+                    </select> 
+                    <input type="submit" id="submitBA" value="Enviar" />
+                </form>
+            </div>
+            <div id ="div_blocoB">
+                <form method="get">
+                    <h3>Bloco B</h3>
+                    <select id = "cb_moverB">
+                        <option value="recep">Recepção Coordenação</option>
+                        <option value="academico">Academico</option>
+                        <option value="dti">DTI</option>
+                        <option value="lab1">Laboratorio 01</option>
+                        <option value="sala dos professores">Sala dos Professores</option>  
+                        <option value="coord servico social">Coord. Serviço Social</option>
+                        <option value="nde">NDE</option>;
+                        <option value="coord contabeis">Coord. Ciençias Contabeis</option>
+                        <option value="coord fisio">Coord. Fisioterapia</option>
+                        <option value="coord adm">Coord, Adminitração</option>
+                        <option value="coord enfermagem">Coord. Enfermagem</option>
+                        <option value="coord psicologia">Coord. Psicologia</option>
+                        <option value="NAPI">NAPI</option>
+                        <option value="coord pedagogica">Coord. Pedagogica</option>
+                        <option value="coord educacao fisica">Coord. Educação Fisica</option>
+                        <option value="coord analise">Coord. Analise de Sistemas</option>
+                    </select> 
+                    <input type="submit" id="submitBB" value="Enviar" />
+                </form>
+            </div>
+            <div id ="div_blocoC">
+                <form method="get">
+                    <h3>Bloco C</h3>
+                    <select id = "cb_moverC">
+                        <option value="cantina2">Cantina 02</option>
+                        <option value="sala de estudos externa">Sala de Estudos Externa</option>
+                        <option value="lab de hardware">Laboratorio de Hardware</option>
+                        <option value="banheiro masculino2">Banheiro Masculino 02</option>
+                        <option value="banheiro feminino2">Banheiro Feminino 02</option> 
+                        <option value="marketing">Marketing</option>
+                        <option value="nexas">Nexas</option>
+                        <option value="copa">Copa</option>
+                        <option value="deposito">Deposito</option>
+                        <option value="reprografia">Reprografia</option>
+                        <option value="copex">Copex</option>
+                    </select> 
+                    <input type="submit" id="submitBC" value="Enviar" />
+                </form>
+            </div>
+
+        </div>
+        <div id ="div_canvas">
+            <canvas width="800" height="600"></canvas>
+        </div>
 
     </body>
 </html>
