@@ -2000,7 +2000,7 @@ function Sprite(img, mapa) {
             this.animar = true;
         }
     };
-    this.mvMarketing = function() {
+    this.mvCopa = function() {
         if (this.posY <= 80) {
             this.posY += 1;
         }
@@ -2200,7 +2200,7 @@ function Sprite(img, mapa) {
             this.animar = true;
         }
     };
-    this.mvCopa = function() {
+    this.mvMarketing = function() {
         if (this.posY <= 80) {
             this.posY += 1;
         }
