@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
 
     var canvas = document.querySelector("canvas");
     var ctx = canvas.getContext("2d");
@@ -8,20 +8,48 @@ window.onload = function() {
     var mapa = new Image();
     mapa.src = "img/mapa.jpg";
 
+    var div = document.getElementById("textDiv"); 
+
     var personagem = new Sprite(boy, mapa);
     var localBA = document.getElementById("cb_moverA");
     var localBB = document.getElementById("cb_moverB");
     var localBC = document.getElementById("cb_moverC");
     var mover;
-    boy.onload = function() {
+    boy.onload = function () {
         init();
     };
     function init() {
         loop();
     }
+    function velocidade() {
+        if (personagem.velocidade <= 2) {
+            document.getElementById("veloMenos").disabled = true;
+            document.getElementById("veloMais").disabled = false;
+        }
+        if (personagem.velocidade >= 2) {
+            document.getElementById("veloMenos").disabled = false;
+            document.getElementById("veloMais").disabled = true;
+        }
+        document.getElementById("veloMais").onclick = function (e) {
+            if (personagem.velocidade <= 2) {
+                personagem.velocidade++;
+                document.getElementById("veloMenos").disabled = true;
+                document.getElementById("veloMais").disabled = false;
+            }
+            e.preventDefault();
+        };
+        document.getElementById("veloMenos").onclick = function (e) {
+            if (personagem.velocidade >= 2) {
+                personagem.velocidade--;
+                document.getElementById("veloMenos").disabled = false;
+                document.getElementById("veloMais").disabled = true;
+            }
+            e.preventDefault();
+        };
 
-    function verificarLocalBA(){
-        document.getElementById("submitBA").onclick = function(e) {
+    }
+    function verificarLocalBA() {
+        document.getElementById("submitBA").onclick = function (e) {
             switch (localBA.value) {
                 case "biblioteca":
                     mover = "biblioteca";
@@ -66,13 +94,13 @@ window.onload = function() {
                 case "financeiro":
                     mover = "financeiro";
                     personagem.resetarMV();
-                    break;            
+                    break;
             }
             e.preventDefault();
         };
     }
-    function verificarLocalBB(){
-                document.getElementById("submitBB").onclick = function(e) {
+    function verificarLocalBB() {
+        document.getElementById("submitBB").onclick = function (e) {
             switch (localBB.value) {
                 case "recep":
                     mover = "recep";
@@ -141,10 +169,10 @@ window.onload = function() {
             }
             e.preventDefault();
         };
-        
+
     }
-    function verificarLocalBC(){
-                document.getElementById("submitBC").onclick = function(e) {
+    function verificarLocalBC() {
+        document.getElementById("submitBC").onclick = function (e) {
             switch (localBC.value) {
                 case "cantina2":
                     mover = "cantina2";
@@ -193,7 +221,7 @@ window.onload = function() {
             }
             e.preventDefault();
         };
-        
+
     }
     function moverLocal(mv) {
         if (mv == "biblioteca") {
@@ -310,7 +338,7 @@ window.onload = function() {
         personagem.drawMapa(ctx, canvas.width, canvas.height);
         personagem.draw(ctx);
     }
-
+    
     function loop() {
         requestAnimationFrame(loop, canvas);
         render();
@@ -318,6 +346,8 @@ window.onload = function() {
         verificarLocalBB();
         verificarLocalBC();
         moverLocal(mover);
+        velocidade();
+         div.textContent = personagem.posX;
     }
 };
 
