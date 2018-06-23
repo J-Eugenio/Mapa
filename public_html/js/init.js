@@ -8,7 +8,8 @@ window.onload = function () {
     var mapa = new Image();
     mapa.src = "img/mapa.jpg";
 
-    var div = document.getElementById("textDiv"); 
+    var div = document.getElementById("textDiv");
+    var div2 = document.getElementById("textDiv2");
 
     var personagem = new Sprite(boy, mapa);
     var localBA = document.getElementById("cb_moverA");
@@ -348,6 +349,7 @@ window.onload = function () {
         moverLocal(mover);
         velocidade();
          div.textContent = personagem.posX;
+         div2.textContent = personagem.posY;
     }
 };
 
