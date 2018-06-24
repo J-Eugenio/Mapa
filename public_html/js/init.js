@@ -8,9 +8,11 @@ window.onload = function () {
     var mapa = new Image();
     mapa.src = "img/mapa.jpg";
 
+    //Debug para mostrar as coordenadas do personagem, mapa.
     var div = document.getElementById("textDiv");
     var div2 = document.getElementById("textDiv2");
-
+    var div3 = document.getElementById("textDiv3");
+    //-----------------------------------------------------
     var personagem = new Sprite(boy, mapa);
     var localBA = document.getElementById("cb_moverA");
     var localBB = document.getElementById("cb_moverB");
@@ -34,16 +36,12 @@ window.onload = function () {
         document.getElementById("veloMais").onclick = function (e) {
             if (personagem.velocidade <= 2) {
                 personagem.velocidade++;
-                document.getElementById("veloMenos").disabled = true;
-                document.getElementById("veloMais").disabled = false;
             }
             e.preventDefault();
         };
         document.getElementById("veloMenos").onclick = function (e) {
             if (personagem.velocidade >= 2) {
                 personagem.velocidade--;
-                document.getElementById("veloMenos").disabled = false;
-                document.getElementById("veloMais").disabled = true;
             }
             e.preventDefault();
         };
@@ -339,7 +337,7 @@ window.onload = function () {
         personagem.drawMapa(ctx, canvas.width, canvas.height);
         personagem.draw(ctx);
     }
-    
+
     function loop() {
         requestAnimationFrame(loop, canvas);
         render();
@@ -348,8 +346,9 @@ window.onload = function () {
         verificarLocalBC();
         moverLocal(mover);
         velocidade();
-         div.textContent = personagem.posX;
-         div2.textContent = personagem.posY;
+        div.textContent = personagem.posX;
+        div2.textContent = personagem.posY;
+        div3.textContent = personagem.mapaY;
     }
 };
 
