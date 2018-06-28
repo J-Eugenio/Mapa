@@ -2258,7 +2258,7 @@ function Sprite(img, mapa) {
         }
     };
     this.mvDeposito = function () {
-                if (this.posY <= 80) {
+        if (this.posY <= 80) {
             this.posY += this.velocidade;
         }
         if (this.posY >= 81 && this.posY <= 90) {
@@ -2336,8 +2336,8 @@ function Sprite(img, mapa) {
                 this.srcY = this.height * 2;//virar para esquerda
             }
         }
-        if(this.posX >= 376 &&  this.posX <= 382 && this.mapaY >= 645 && this.mapaY <= 649){
-            if(this.posY >= 475){
+        if (this.posX >= 376 && this.posX <= 382 && this.mapaY >= 645 && this.mapaY <= 649) {
+            if (this.posY >= 475) {
                 this.posY -= this.velocidade;
                 this.srcY = this.height; //virar para cima
             }
@@ -2353,7 +2353,7 @@ function Sprite(img, mapa) {
 
     };
     this.mvReprografia = function () {
-                if (this.posY <= 80) {
+        if (this.posY <= 80) {
             this.posY += this.velocidade;
         }
         if (this.posY >= 81 && this.posY <= 90) {
@@ -2431,13 +2431,13 @@ function Sprite(img, mapa) {
                 this.srcY = this.height * 2;//virar para esquerda
             }
         }
-        if(this.posX >= 306 &&  this.posX <= 310 && this.mapaY >= 645 && this.mapaY <= 649){
-            if(this.posY >= 475){
+        if (this.posX >= 306 && this.posX <= 310 && this.mapaY >= 645 && this.mapaY <= 649) {
+            if (this.posY >= 475) {
                 this.posY -= this.velocidade;
                 this.srcY = this.height; //virar para cima
             }
         }
-        if (this.posX >= 306 &&  this.posX <= 310 && this.posY >= 470 && this.posY <= 476 && this.mapaY >= 532) {
+        if (this.posX >= 306 && this.posX <= 310 && this.posY >= 470 && this.posY <= 476 && this.mapaY >= 532) {
             this.posX = 669;
             this.posY = 20;
             this.srcY = 0;
@@ -2447,7 +2447,7 @@ function Sprite(img, mapa) {
         }
     };
     this.mvCopex = function () {
-                        if (this.posY <= 80) {
+        if (this.posY <= 80) {
             this.posY += this.velocidade;
         }
         if (this.posY >= 81 && this.posY <= 90) {
@@ -2498,7 +2498,7 @@ function Sprite(img, mapa) {
                 this.srcY = this.height * 3;//virar para direita
             }
         }
-        if (this.posY >= 514 && this.posY <= 519 && this.posX >= 540 && this.posX <= 547 && this.mapaY >= 124 && this.mapaY <= 265) {//bloco C
+        if (this.posY >= 514 && this.posY <= 519 && this.posX >= 540 && this.posX <= 547 && this.mapaY >= 122 && this.mapaY <= 265) {//bloco C
             if (this.mapaY <= 265) {
                 this.mapaY += this.velocidade;
                 this.srcY = 0;//virar para baixo
@@ -2525,13 +2525,13 @@ function Sprite(img, mapa) {
                 this.srcY = this.height * 2;//virar para esquerda
             }
         }
-        if(this.posX >= 238 &&  this.posX <= 245 && this.mapaY >= 645 && this.mapaY <= 649){
-            if(this.posY >= 475){
+        if (this.posX >= 238 && this.posX <= 245 && this.mapaY >= 645 && this.mapaY <= 649) {
+            if (this.posY >= 475) {
                 this.posY -= this.velocidade;
                 this.srcY = this.height; //virar para cima
             }
         }
-        if (this.posX >= 238 &&  this.posX <= 245  && this.posY >= 470 && this.posY <= 476 && this.mapaY >= 532) {
+        if (this.posX >= 238 && this.posX <= 245 && this.posY >= 470 && this.posY <= 476 && this.mapaY >= 532) {
             this.posX = 669;
             this.posY = 20;
             this.srcY = 0;
