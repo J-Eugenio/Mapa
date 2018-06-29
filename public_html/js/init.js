@@ -17,12 +17,35 @@ window.onload = function () {
     var localBA = document.getElementById("cb_moverA");
     var localBB = document.getElementById("cb_moverB");
     var localBC = document.getElementById("cb_moverC");
+    var locais = document.getElementById("cb_movers");
+    var divA = document.getElementById("div_blocoA");
+    var divB = document.getElementById("div_blocoB");
+    var divC = document.getElementById("div_blocoC");
     var mover;
     boy.onload = function () {
         init();
     };
     function init() {
         loop();
+    }
+    function verificarBlocos(){
+        switch(locais.value){
+            case "BA":
+                divA.style.visibility = "visible";
+                divB.style.visibility = "hidden";
+                divC.style.visibility = "hidden";
+                break;
+            case "BB":
+                divA.style.visibility = "hidden";
+                divB.style.visibility = "visible";
+                divC.style.visibility = "hidden";
+                break;
+            case "BC":
+                divA.style.visibility = "hidden";
+                divB.style.visibility = "hidden";
+                divC.style.visibility = "visible";
+                break;
+        }
     }
     function velocidade() {
         if (personagem.velocidade <= 2) {
@@ -344,6 +367,7 @@ window.onload = function () {
         verificarLocalBA();
         verificarLocalBB();
         verificarLocalBC();
+        verificarBlocos();
         moverLocal(mover);
         velocidade();
         div.textContent = personagem.posX;
