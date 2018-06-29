@@ -6,7 +6,48 @@
         <meta charset="UTF-8">
         <script src="js/funcoes.js"></script>
         <script src="js/init.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
     </head>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body,html{
+            width: 100%;
+            height: 100%;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            background: #f3f3f3;
+        }
+
+        .row{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        canvas {
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 800px;
+            -webkit-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.28);
+            -moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.28);
+            box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.28);
+        }
+        
+        .texto{
+            text-align: center;
+        }
+
+        .btnt{
+            border-radius: 20px;
+        }
+    </style>
+    <!--
     <style type="text/css">
         canvas{
             border: solid 1px;
@@ -33,80 +74,103 @@
 
         }
 
-    </style>
+    </style>-->
     <body>
-        <div id ="div_moves">
-            <div id ="div_blocoA">
-                <form method="get">
-                    <h3>Bloco A</h3>
-                    <select id = "cb_moverA">
-                        <option value="biblioteca">Biblioteca</option>
-                        <option value="lab2">Laboratorio 02</option>
-                        <option value="fies">Fies</option>
-                        <option value="fies">ProUni</option>
-                        <option value="fies">RH</option>              
-                        <option value="cantina">Cantina</option>
-                        <option value="auditorio">Auditorio</option>
-                        <option value="xerox">Xerox</option>
-                        <option value="masculino">Banheiro Masculino</option>
-                        <option value="feminino">Banheiro Feminino</option>
-                        <option value="financeiro">Financeiro</option>
-                    </select> 
-                    <input type="submit" id="submitBA" value="Enviar" />
-                </form>
-            </div>
-            <div id ="div_blocoB">
-                <form method="get">
-                    <h3>Bloco B</h3>
-                    <select id = "cb_moverB">
-                        <option value="recep">Recepção Coordenação</option>
-                        <option value="academico">Academico</option>
-                        <option value="dti">DTI</option>
-                        <option value="lab1">Laboratorio 01</option>
-                        <option value="sala dos professores">Sala dos Professores</option>  
-                        <option value="coord servico social">Coord. Serviço Social</option>
-                        <option value="nde">NDE</option>;
-                        <option value="coord contabeis">Coord. Ciençias Contabeis</option>
-                        <option value="coord fisio">Coord. Fisioterapia</option>
-                        <option value="coord adm">Coord. Administração</option>
-                        <option value="coord enfermagem">Coord. Enfermagem</option>
-                        <option value="coord psicologia">Coord. Psicologia</option>
-                        <option value="NAPI">NAPI</option>
-                        <option value="coord pedagogica">Coord. Pedagogica</option>
-                        <option value="coord educacao fisica">Coord. Educação Fisica</option>
-                        <option value="coord analise">Coord. Analise de Sistemas</option>
-                    </select> 
-                    <input type="submit" id="submitBB" value="Enviar" />
-                </form>
-            </div>
-            <div id ="div_blocoC">
-                <form method="get">
-                    <h3>Bloco C</h3>
-                    <select id = "cb_moverC">
-                        <option value="cantina2">Cantina 02</option>
-                        <option value="sala de estudos externa">Sala de Estudos Externa</option>
-                        <option value="lab de hardware">Laboratorio de Hardware</option>
-                        <option value="banheiro masculino2">Banheiro Masculino 02</option>
-                        <option value="banheiro feminino2">Banheiro Feminino 02</option> 
-                        <option value="marketing">Marketing</option>
-                        <option value="nexas">Nexas</option>
-                        <option value="copa">Copa</option>
-                        <option value="deposito">Deposito</option>
-                        <option value="reprografia">Reprografia</option>
-                        <option value="copex">Copex</option>
-                    </select> 
-                    <input type="submit" id="submitBC" value="Enviar" />
-                    Velocidade<input type="button" id="veloMais" value="+">
-                    <input type="button" id="veloMenos" value="-">
-                </form>
+        <div class="container">
+            <div id ="div_moves" class="row">
+                <div id ="div_blocoA" class="form-group col-sm-4">
+                    <form method="get" class="form-inline">
+                        <label>Bloco A</label>
+                        <select id = "cb_moverA" class="form-control">
+                            <option value="biblioteca">Biblioteca</option>
+                            <option value="lab2">Laboratorio 02</option>
+                            <option value="fies">Fies</option>
+                            <option value="fies">ProUni</option>
+                            <option value="fies">RH</option>              
+                            <option value="cantina">Cantina</option>
+                            <option value="auditorio">Auditorio</option>
+                            <option value="xerox">Xerox</option>
+                            <option value="masculino">Banheiro Masculino</option>
+                            <option value="feminino">Banheiro Feminino</option>
+                            <option value="financeiro">Financeiro</option>
+                        </select> 
+                        <input type="submit" class="btn btn-primary" id="submitBA" value="Enviar" />
+                    </form>
+                </div>
+                <div id ="div_blocoB" class="form-group col-sm-4">
+                    <form method="get" class="form-inline">
+                        <label>Bloco B</label>
+                        <select id = "cb_moverB" class="form-control">
+                            <option value="recep">Recepção Coordenação</option>
+                            <option value="academico">Academico</option>
+                            <option value="dti">DTI</option>
+                            <option value="lab1">Laboratorio 01</option>
+                            <option value="sala dos professores">Sala dos Professores</option>  
+                            <option value="coord servico social">Coord. Serviço Social</option>
+                            <option value="nde">NDE</option>;
+                            <option value="coord contabeis">Coord. Ciençias Contabeis</option>
+                            <option value="coord fisio">Coord. Fisioterapia</option>
+                            <option value="coord adm">Coord. Administração</option>
+                            <option value="coord enfermagem">Coord. Enfermagem</option>
+                            <option value="coord psicologia">Coord. Psicologia</option>
+                            <option value="NAPI">NAPI</option>
+                            <option value="coord pedagogica">Coord. Pedagogica</option>
+                            <option value="coord educacao fisica">Coord. Educação Fisica</option>
+                            <option value="coord analise">Coord. Analise de Sistemas</option>
+                        </select> 
+                        <input type="submit" class="btn btn-primary" id="submitBB" value="Enviar" />
+                    </form>
+                </div>
+                <div id ="div_blocoC" class="form-group col-sm-4">
+                    <form method="get" class="form-inline">
+                        <label>Bloco C</label>
+                        <select id = "cb_moverC" class="form-control">
+                            <option value="cantina2">Cantina 02</option>
+                            <option value="sala de estudos externa">Sala de Estudos Externa</option>
+                            <option value="lab de hardware">Laboratorio de Hardware</option>
+                            <option value="banheiro masculino2">Banheiro Masculino 02</option>
+                            <option value="banheiro feminino2">Banheiro Feminino 02</option> 
+                            <option value="marketing">Marketing</option>
+                            <option value="nexas">Nexas</option>
+                            <option value="copa">Copa</option>
+                            <option value="deposito">Deposito</option>
+                            <option value="reprografia">Reprografia</option>
+                            <option value="copex">Copex</option>
+                        </select>
+                        <input type="submit" class="btn btn-primary" id="submitBC" value="Enviar" /> 
+                    </form>
+                </div>
+
             </div>
 
+            <div class="row texto">
+                <div class="col-sm-6 col-md-offset-3">
+                <div class="form-group col-sm-2 form-inline">
+                    <label>X:</label><div id="textDiv"> TEXT</div>         
+                </div>
+
+                <div class="form-group col-sm-2 form-inline">
+                    <label>Y:</label><div id="textDiv2"> TEXT</div>      
+                </div>
+
+                <div class="form-group col-sm-2 form-inline">
+                    <label>Mapa Y:</label><div id="textDiv3"> TEXT</div>       
+                </div>
+                
+                <div class="form-group col-sm-6">
+                    <form method="get" class="form-inline">
+                    <label>Velocidade:</label>
+                    <input type="button" class="btn btn-info btnt" id="veloMais" value="+">
+                    <input type="button" class="btn btn-info btnt" id="veloMenos" value="-">
+                    </form>
+                </div>   
+            </div>
+            </div>
+
+            <div id ="div_canvas" class="row">
+                <canvas width="800" height="600"></canvas>
+            </div>
+            
         </div>
-        <div id ="div_canvas">
-            <canvas width="800" height="600"></canvas>
-        </div>
-        <b><h2>X:</h2></b><div id="textDiv"> TEXT</div><br>
-        <b><h2>Y:</h2></b><div id="textDiv2"> TEXT</div>
-        <b><h2>MAPA Y:</h2></b><div id="textDiv3"> TEXT</div>
     </body>
 </html>
