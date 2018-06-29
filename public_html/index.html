@@ -38,7 +38,7 @@
             -moz-box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.28);
             box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.28);
         }
-        
+
         .texto{
             text-align: center;
         }
@@ -46,6 +46,26 @@
         .btnt{
             border-radius: 20px;
         }
+        
+        #div_blocoA{
+            position: absolute;
+            z-index: 1;
+            left: 30%;
+        }
+        
+        #div_blocoB{
+            position: absolute;
+            z-index: 2;
+            left: 30%;
+        }
+        
+        #div_blocoC{
+            position: absolute;
+            z-index: 3;
+            left: 30%;
+        }
+
+
     </style>
     <!--
     <style type="text/css">
@@ -155,32 +175,32 @@
 
             <div class="row texto">
                 <div class="col-sm-6 col-md-offset-3">
-                <div class="form-group col-sm-2 form-inline">
-                    <label>X:</label><div id="textDiv"> TEXT</div>         
-                </div>
+                    <div class="form-group col-sm-2 form-inline">
+                        <label>X:</label><div id="textDiv"> TEXT</div>         
+                    </div>
 
-                <div class="form-group col-sm-2 form-inline">
-                    <label>Y:</label><div id="textDiv2"> TEXT</div>      
-                </div>
+                    <div class="form-group col-sm-2 form-inline">
+                        <label>Y:</label><div id="textDiv2"> TEXT</div>      
+                    </div>
 
-                <div class="form-group col-sm-2 form-inline">
-                    <label>Mapa Y:</label><div id="textDiv3"> TEXT</div>       
+                    <div class="form-group col-sm-2 form-inline">
+                        <label>Mapa Y:</label><div id="textDiv3"> TEXT</div>       
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <form method="get" class="form-inline">
+                            <label>Velocidade:</label>
+                            <input type="button" class="btn btn-info btnt" id="veloMais" value="+">
+                            <input type="button" class="btn btn-info btnt" id="veloMenos" value="-">
+                        </form>
+                    </div>   
                 </div>
-                
-                <div class="form-group col-sm-6">
-                    <form method="get" class="form-inline">
-                    <label>Velocidade:</label>
-                    <input type="button" class="btn btn-info btnt" id="veloMais" value="+">
-                    <input type="button" class="btn btn-info btnt" id="veloMenos" value="-">
-                    </form>
-                </div>   
-            </div>
             </div>
 
             <div id ="div_canvas" class="row">
                 <canvas width="800" height="600"></canvas>
             </div>
-            
+
         </div>
     </body>
 </html>
