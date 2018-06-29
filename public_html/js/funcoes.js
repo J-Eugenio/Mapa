@@ -37,6 +37,17 @@ function Sprite(img, mapa) {
         this.aux = false;
         this.animar = true;
     };
+    this.resetarMVI = function () {
+        this.posX = 669;
+        this.posY = 20;
+        this.srcY = 0;
+        this.mapaY = 0;
+        this.aux = false;
+        this.animar = false;
+    };
+    this.resetarVelocidade = function(){
+      this.velocidade = 1;  
+    };
     this.mvBiblioteca = function () {
         if (this.posY <= 80) {
             this.posY += this.velocidade;

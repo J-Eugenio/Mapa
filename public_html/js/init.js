@@ -21,6 +21,7 @@ window.onload = function () {
     var divA = document.getElementById("div_blocoA");
     var divB = document.getElementById("div_blocoB");
     var divC = document.getElementById("div_blocoC");
+    var resetar = document.getElementById("resetarMV");
     var mover;
     boy.onload = function () {
         init();
@@ -69,6 +70,15 @@ window.onload = function () {
             e.preventDefault();
         };
 
+    }
+    function resetarMV(){
+        resetar.onclick = function(e){
+          personagem.resetarMVI(); 
+          personagem.resetarVelocidade();
+          mover = "";
+          e.preventDefault();
+        };
+        
     }
     function verificarLocalBA() {
         document.getElementById("submitBA").onclick = function (e) {
@@ -370,6 +380,7 @@ window.onload = function () {
         verificarBlocos();
         moverLocal(mover);
         velocidade();
+        resetarMV();
         div.textContent = personagem.posX;
         div2.textContent = personagem.posY;
         div3.textContent = personagem.mapaY;
