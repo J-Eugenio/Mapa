@@ -10,6 +10,8 @@ function Sprite(img, mapa) {
     this.width = 24;
     this.height = 32;
     this.velocidade = 1;
+    this.delay = 0;// delay do personagem antes de resetar em ms.
+    this.tempo = 90;// tempo do delay
     //posição do personagem
     this.posX = 669;
     this.posY = 20;
@@ -30,13 +32,15 @@ function Sprite(img, mapa) {
 
     //Mover
     this.resetarMV = function () {
+        this.aux = false;
+        this.animar = true;
         this.posX = 669;
         this.posY = 20;
         this.srcY = 0;
         this.mapaY = 0;
-        this.aux = false;
-        this.animar = true;
+        this.delay = 0;
     };
+
     this.resetarMVI = function () {
         this.posX = 669;
         this.posY = 20;
@@ -44,9 +48,10 @@ function Sprite(img, mapa) {
         this.mapaY = 0;
         this.aux = false;
         this.animar = false;
+        this.delay = 0;
     };
-    this.resetarVelocidade = function(){
-      this.velocidade = 1;  
+    this.resetarVelocidade = function () {
+        this.velocidade = 1;
     };
     this.mvBiblioteca = function () {
         if (this.posY <= 80) {
@@ -87,11 +92,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 700 && this.posX <= 703 && this.posY >= 485.5) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvProUniFiesRH = function () {
@@ -117,11 +121,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 670 && this.posX <= 673 && this.posY >= 106 && this.posY <= 110) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
+           this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
 
     };
@@ -169,12 +172,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 271 && this.posX <= 274 && this.posY >= 191 && this.posY <= 194) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCantina = function () {
@@ -221,12 +222,10 @@ function Sprite(img, mapa) {
         }
 
         if (this.posX >= 680 && this.posX <= 686 && this.posY >= 205 && this.posY <= 213) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvAuditorio = function () {
@@ -268,12 +267,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 400 && this.posX <= 403 && this.posY >= 197 && this.posY <= 199) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
 
     };
@@ -300,12 +297,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 75 && this.posX <= 78 && this.posY >= 311 && this.posY <= 313) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvRecepCoord = function () {
@@ -367,12 +362,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 388 && this.posX <= 393 && this.posY >= 414 && this.posY <= 419 && this.mapaY == 124) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvBanheiroM = function () {
@@ -418,12 +411,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 679 && this.posX <= 682 && this.posY >= 308 && this.posY <= 311) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvBanheiroF = function () {
@@ -469,12 +460,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 716 && this.posX <= 719 && this.posY >= 307 && this.posY <= 310) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvFinanceiro = function () {
@@ -522,12 +511,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 530 && this.posX <= 535 && this.posY >= 380 && this.posY <= 384) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvAcademico = function () {
@@ -569,12 +556,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 516 && this.posX <= 521 && this.posY >= 417 && this.posY <= 420) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvDTI = function () {
@@ -622,12 +607,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 402 && this.posX <= 405 && this.posY >= 442 && this.posY <= 446) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvLab1 = function () {
@@ -675,12 +658,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 317 && this.posX <= 320 && this.posY >= 442 && this.posY <= 446) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvSalaProfessores = function () {
@@ -722,12 +703,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 165 && this.posX <= 168 && this.posY >= 415 && this.posY <= 418) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvNDE = function () {
@@ -775,12 +754,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 165 && this.posX <= 169 && this.posY >= 487 && this.posY <= 491) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCoordServSocial = function () {
@@ -848,12 +825,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 362 && this.posX <= 365 && this.posY >= 429 && this.posY <= 432 && this.mapaY >= 122 && this.mapaY <= 125) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
 
     };
@@ -922,12 +897,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 362 && this.posX <= 366 && this.posY >= 473 && this.posY <= 477 && this.mapaY >= 122 && this.mapaY <= 125) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
 
     };
@@ -996,12 +969,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 362 && this.posX <= 365 && this.posY >= 504 && this.posY <= 507 && this.mapaY >= 122 && this.mapaY <= 125) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCoordADM = function () {
@@ -1069,12 +1040,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 355 && this.posX <= 360 && this.posY >= 513 && this.posY <= 520 && this.mapaY >= 150 && this.mapaY <= 158) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCoordEmfermagem = function () {
@@ -1148,12 +1117,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 381 && this.posX <= 389 && this.posY >= 535 && this.posY <= 542 && this.mapaY >= 150 && this.mapaY <= 158) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCoordPsicologia = function () {
@@ -1227,12 +1194,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 400 && this.posX <= 408 && this.posY >= 537 && this.posY <= 543 && this.mapaY >= 150 && this.mapaY <= 158) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvNAPI = function () {
@@ -1306,12 +1271,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 582 && this.posX <= 589 && this.posY >= 541 && this.posY <= 548 && this.mapaY >= 153 && this.mapaY <= 160) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCoordPedagogica = function () {
@@ -1385,12 +1348,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 610 && this.posX <= 617 && this.posY >= 532 && this.posY <= 539 && this.mapaY >= 152 && this.mapaY <= 160) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCoordEducFisica = function () {
@@ -1464,12 +1425,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 638 && this.posX <= 644 && this.posY >= 533 && this.posY <= 540 && this.mapaY >= 163 && this.mapaY <= 170) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+           this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCoordAnalise = function () {
@@ -1537,12 +1496,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 670 && this.posX <= 677 && this.posY >= 532 && this.posY <= 539 && this.mapaY >= 122 && this.mapaY <= 125) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCantina2 = function () {
@@ -1626,12 +1583,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 591 && this.posX <= 598 && this.posY >= 513 && this.posY <= 519 && this.mapaY >= 470 && this.mapaY <= 477) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvSalaEstudosExterna = function () {
@@ -1714,12 +1669,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 676 && this.posX <= 683 && this.posY >= 541 && this.posY <= 549 && this.mapaY >= 645) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvLabHardware = function () {
@@ -1808,12 +1761,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 270 && this.posX <= 277 && this.posY >= 549 && this.posY <= 552 && this.mapaY >= 645) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+           this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvBanheiroMBC = function () {
@@ -1902,12 +1853,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 79 && this.posX <= 85 && this.posY >= 549 && this.posY <= 553 && this.mapaY >= 645) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvBanheiroFBC = function () {
@@ -1996,12 +1945,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 38 && this.posX <= 43 && this.posY >= 548 && this.posY <= 552 && this.mapaY >= 645) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCopa = function () {
@@ -2084,12 +2031,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 75 && this.posX <= 78 && this.posY >= 512 && this.posY <= 520 && this.mapaY >= 532) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvNexas = function () {
@@ -2172,12 +2117,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 75 && this.posX <= 78 && this.posY >= 512 && this.posY <= 520 && this.mapaY >= 532) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvMarketing = function () {
@@ -2260,12 +2203,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 75 && this.posX <= 78 && this.posY >= 512 && this.posY <= 520 && this.mapaY >= 532) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvDeposito = function () {
@@ -2354,12 +2295,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 378 && this.posX <= 384 && this.posY >= 470 && this.posY <= 476 && this.mapaY >= 532) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
 
     };
@@ -2449,12 +2388,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 306 && this.posX <= 310 && this.posY >= 470 && this.posY <= 476 && this.mapaY >= 532) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
     this.mvCopex = function () {
@@ -2543,12 +2480,10 @@ function Sprite(img, mapa) {
             }
         }
         if (this.posX >= 238 && this.posX <= 245 && this.posY >= 470 && this.posY <= 476 && this.mapaY >= 532) {
-            this.posX = 669;
-            this.posY = 20;
-            this.srcY = 0;
-            this.mapaY = 0;
-            this.aux = false;
-            this.animar = true;
+            this.delay ++;
+            if(this.delay >= this.tempo){
+                this.resetarMV();
+            }
         }
     };
 
