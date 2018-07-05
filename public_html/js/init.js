@@ -39,8 +39,8 @@ window.onload = function () {
     function init() {
         loop();
     }
-    function verificarBlocos(){
-        switch(locais.value){
+    function verificarBlocos() {
+        switch (locais.value) {
             case "atendimentos":
                 divAtendimentos.style.visibility = "visible";
                 divCoord.style.visibility = "hidden";
@@ -114,26 +114,18 @@ window.onload = function () {
         };
 
     }
-    function resetarMV(){
-        resetar.onclick = function(e){
-          personagem.resetarMVI(); 
-          personagem.resetarVelocidade();
-          mover = "";
-          e.preventDefault();
+    function resetarMV() {
+        resetar.onclick = function (e) {
+            personagem.resetarMVI();
+            personagem.resetarVelocidade();
+            mover = "";
+            e.preventDefault();
         };
-        
+
     }
-    function verificarLocalBA() {
-        document.getElementById("submitBA").onclick = function (e) {
+    function verificarLocalAtendimento() {
+        document.getElementById("submitAtendimentos").onclick = function (e) {
             switch (atendimentos.value) {
-                case "biblioteca":
-                    mover = "biblioteca";
-                    personagem.resetarMV();
-                    break;
-                case "lab2":
-                    mover = "lab2";
-                    personagem.resetarMV();
-                    break;
                 case "fies":
                     mover = "fies";
                     personagem.resetarMV();
@@ -146,39 +138,8 @@ window.onload = function () {
                     mover = "rh";
                     personagem.resetarMV();
                     break;
-                case "cantina":
-                    mover = "cantina";
-                    personagem.resetarMV();
-                    break;
-                case "auditorio":
-                    mover = "auditorio";
-                    personagem.resetarMV();
-                    break;
-                case "xerox":
-                    mover = "xerox";
-                    personagem.resetarMV();
-                    break;
-                case "masculino":
-                    mover = "masculino";
-                    personagem.resetarMV();
-                    break;
-                case "feminino":
-                    mover = "feminino";
-                    personagem.resetarMV();
-                    break;
                 case "financeiro":
                     mover = "financeiro";
-                    personagem.resetarMV();
-                    break;
-            }
-            e.preventDefault();
-        };
-    }
-    function verificarLocalBB() {
-        document.getElementById("submitBB").onclick = function (e) {
-            switch (localBB.value) {
-                case "recep":
-                    mover = "recep";
                     personagem.resetarMV();
                     break;
                 case "academico":
@@ -189,18 +150,29 @@ window.onload = function () {
                     mover = "dti";
                     personagem.resetarMV();
                     break;
-                case "lab1":
-                    mover = "lab1";
+                case "marketing":
+                    mover = "marketing";
                     personagem.resetarMV();
                     break;
-                case "sala dos professores":
-                    mover = "sala dos professores";
+                case "nexas":
+                    mover = "nexas";
                     personagem.resetarMV();
                     break;
-                case "nde":
-                    mover = "nde";
+                case "reprografia":
+                    mover = "reprografia";
                     personagem.resetarMV();
                     break;
+                case "copex":
+                    mover = "copex";
+                    personagem.resetarMV();
+                    break;
+            }
+            e.preventDefault();
+        };
+    }
+    function verificarLocalCoord() {
+        document.getElementById("submitCoord").onclick = function (e) {
+            switch (coord.value) {
                 case "coord servico social":
                     mover = "coord servico social";
                     personagem.resetarMV();
@@ -225,10 +197,6 @@ window.onload = function () {
                     mover = "coord psicologia";
                     personagem.resetarMV();
                     break;
-                case "NAPI":
-                    mover = "NAPI";
-                    personagem.resetarMV();
-                    break;
                 case "coord pedagogica":
                     mover = "coord pedagogica";
                     personagem.resetarMV();
@@ -241,24 +209,93 @@ window.onload = function () {
                     mover = "coord analise";
                     personagem.resetarMV();
                     break;
+                case "NAPI":
+                    mover = "NAPI";
+                    personagem.resetarMV();
+                    break;
             }
             e.preventDefault();
         };
 
     }
-    function verificarLocalBC() {
-        document.getElementById("submitBC").onclick = function (e) {
-            switch (localBC.value) {
+    function verificarLocalConvivencia() {
+        document.getElementById("submitConvivencia").onclick = function (e) {
+            switch (convivencia.value) {
                 case "cantina2":
                     mover = "cantina2";
+                    personagem.resetarMV();
+                    break;
+                case "cantina":
+                    mover = "cantina";
+                    personagem.resetarMV();
+                    break;
+                case "xerox":
+                    mover = "xerox";
+                    personagem.resetarMV();
+                    break;
+            }
+            e.preventDefault();
+        };
+
+    }
+    function verificarLocalLabs() {
+        document.getElementById("submitLabs").onclick = function (e) {
+            switch (labs.value) {
+                case "lab1":
+                    mover = "lab1";
+                    personagem.resetarMV();
+                    break;
+                case "lab2":
+                    mover = "lab2";
+                    personagem.resetarMV();
+                    break;
+                case "lab de hardware":
+                    mover = "lab de hardware";
+                    personagem.resetarMV();
+                    break;
+                
+            }
+            e.preventDefault();
+        };
+    }
+    function verificarLocalOutros() {
+        document.getElementById("submitOutros").onclick = function (e) {
+            switch (outros.value) {
+                case "biblioteca":
+                    mover = "biblioteca";
                     personagem.resetarMV();
                     break;
                 case "sala de estudos externa":
                     mover = "sala de estudos externa";
                     personagem.resetarMV();
                     break;
-                case "lab de hardware":
-                    mover = "lab de hardware";
+                case "sala dos professores":
+                    mover = "sala dos professores";
+                    personagem.resetarMV();
+                    break;
+                case "copa":
+                    mover = "copa";
+                    personagem.resetarMV();
+                    break;
+                case "nde":
+                    mover = "nde";
+                    personagem.resetarMV();
+                    break;
+                
+            }
+            e.preventDefault();
+        };
+
+    }
+    function verificarLocalBanheiro() {
+        document.getElementById("submitBanheiros").onclick = function (e) {
+            switch (banheiros.value) {
+                case "masculino":
+                    mover = "masculino";
+                    personagem.resetarMV();
+                    break;
+                case "feminino":
+                    mover = "feminino";
                     personagem.resetarMV();
                     break;
                 case "banheiro masculino2":
@@ -269,30 +306,7 @@ window.onload = function () {
                     mover = "banheiro feminino2";
                     personagem.resetarMV();
                     break;
-                case "marketing":
-                    mover = "marketing";
-                    personagem.resetarMV();
-                    break;
-                case "nexas":
-                    mover = "nexas";
-                    personagem.resetarMV();
-                    break;
-                case "copa":
-                    mover = "copa";
-                    personagem.resetarMV();
-                    break;
-                case "deposito":
-                    mover = "deposito";
-                    personagem.resetarMV();
-                    break;
-                case "reprografia":
-                    mover = "reprografia";
-                    personagem.resetarMV();
-                    break;
-                case "copex":
-                    mover = "copex";
-                    personagem.resetarMV();
-                    break;
+                
             }
             e.preventDefault();
         };
@@ -417,9 +431,12 @@ window.onload = function () {
     function loop() {
         requestAnimationFrame(loop, canvas);
         render();
-        verificarLocalBA();
-        verificarLocalBB();
-        verificarLocalBC();
+        verificarLocalAtendimento();
+        verificarLocalCoord();
+        verificarLocalConvivencia();
+        verificarLocalLabs();
+        verificarLocalOutros();
+        verificarLocalBanheiro();
         verificarBlocos();
         moverLocal(mover);
         velocidade();
