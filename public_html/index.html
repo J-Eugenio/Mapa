@@ -50,116 +50,158 @@
         .btnt{
             border-radius: 20px;
         }
-        
-        #div_blocoA{
+
+        #div_atendimentos{
             position: absolute;
             z-index: 1;
-            left: 30%;
-            
+            left: 10%;
+
         }
-        
-        #div_blocoB{
+
+        #div_coord{
             position: absolute;
             z-index: 2;
-            left: 30%;
+            left: 10%;
         }
-        
-        #div_blocoC{
+
+        #div_convivencia{
             position: absolute;
             z-index: 3;
-            left: 30%;
+            left: 10%;
+        }
+        #div_labs{
+            position: absolute;
+            z-index: 4;
+            left: 10%;
+
+        }
+
+        #div_banheiros{
+            position: absolute;
+            z-index: 5;
+            left: 10%;
+        }
+
+        #div_outros{
+            position: absolute;
+            z-index: 6;
+            left: 10%;
         }
         #resetarMV{
             position: absolute;
             left: 100%;
-            z-index: 4;
-            
+            z-index: 7;
+
         }
     </style> 
     <body>
         <div class="container">
             <div id ="div_moves" class="row texto">
 
-              <div class="col-sm-10 col-md-offset-2 esp">
+                <div class="col-sm-10 col-md-offset-2 esp">
 
-                <div id ="div_blocos" class="form-group col-sm-4">
-                    <form method="get" class="form-inline">
-                        <label>Bloco</label>
-                        <select id = "cb_movers" class="form-control">
-                            <option value="BA">Bloco A</option>
-                            <option value="BB">Bloco B</option>
-                            <option value="BC">Bloco C</option>
-                        </select> 
-                    </form>
-                </div>
+                    <div id ="div_blocos" class="form-group col-sm-4">
+                        <form method="get" class="form-inline">
+                            <label>Bloco</label>
+                            <select id = "cb_movers" class="form-control">
+                                <option value="atendimentos">Atendimentos</option>
+                                <option value="coord">Coordenações</option>
+                                <option value="convivencia">Convivência C</option>
+                                <option value="labs">Laboratórios</option>
+                                <option value="banheiros">Banheiros</option>
+                                <option value="outros">Outros</option>
+                            </select> 
+                        </form>
+                    </div>
 
-                <div class="form-group col-sm-6">
-                <div id ="div_blocoA">
-                    <form method="get" class="form-inline">
-                        <label>Bloco A</label>
-                        <select id = "cb_moverA" class="form-control">
-                            <option value="biblioteca">Biblioteca</option>
-                            <option value="lab2">Laboratorio 02</option>
-                            <option value="fies">Fies</option>
-                            <option value="fies">ProUni</option>
-                            <option value="fies">RH</option>              
-                            <option value="cantina">Cantina</option>
-                            <option value="auditorio">Auditorio</option>
-                            <option value="xerox">Xerox</option>
-                            <option value="masculino">Banheiro Masculino</option>
-                            <option value="feminino">Banheiro Feminino</option>
-                            <option value="financeiro">Financeiro</option>
-                        </select> 
-                        <input type="submit" class="btn btn-primary" id="submitBA" value="Enviar" />                        
-                    </form>
-                </div>
-                    <input type="button" class="btn btn-primary" id="resetarMV" value="Resetar" /> 
-                <div id ="div_blocoB">
-                    <form method="get" class="form-inline">
-                        <label>Bloco B</label>
-                        <select id = "cb_moverB" class="form-control">
-                            <option value="recep">Recepção Coordenação</option>
-                            <option value="academico">Academico</option>
-                            <option value="dti">DTI</option>
-                            <option value="lab1">Laboratorio 01</option>
-                            <option value="sala dos professores">Sala dos Professores</option>  
-                            <option value="coord servico social">Coord. Serviço Social</option>
-                            <option value="nde">NDE</option>;
-                            <option value="coord contabeis">Coord. Ciençias Contabeis</option>
-                            <option value="coord fisio">Coord. Fisioterapia</option>
-                            <option value="coord adm">Coord. Administração</option>
-                            <option value="coord enfermagem">Coord. Enfermagem</option>
-                            <option value="coord psicologia">Coord. Psicologia</option>
-                            <option value="NAPI">NAPI</option>
-                            <option value="coord pedagogica">Coord. Pedagogica</option>
-                            <option value="coord educacao fisica">Coord. Educação Fisica</option>
-                            <option value="coord analise">Coord. Analise de Sistemas</option>
-                        </select> 
-                        <input type="submit" class="btn btn-primary" id="submitBB" value="Enviar" />                       
-                    </form>
-                </div>
-                <div id ="div_blocoC">
-                    <form method="get" class="form-inline">
-                        <label>Bloco C</label>
-                        <select id = "cb_moverC" class="form-control">
-                            <option value="cantina2">Cantina 02</option>
-                            <option value="sala de estudos externa">Sala de Estudos Externa</option>
-                            <option value="lab de hardware">Laboratorio de Hardware</option>
-                            <option value="banheiro masculino2">Banheiro Masculino 02</option>
-                            <option value="banheiro feminino2">Banheiro Feminino 02</option> 
-                            <option value="marketing">Marketing</option>
-                            <option value="nexas">Nexas</option>
-                            <option value="copa">Copa</option>
-                            <option value="deposito">Deposito</option>
-                            <option value="reprografia">Reprografia</option>
-                            <option value="copex">Copex</option>
-                        </select>
-                        <input type="submit" class="btn btn-primary" id="submitBC" value="Enviar" />
-                    </form>
-                </div>
-                </div>
+                    <div class="form-group col-sm-6">
+                        <div id ="div_atendimentos">
+                            <form method="get" class="form-inline">
+                                <label>ATENDIMENTOS</label>
+                                <select id = "cb_atendimentos" class="form-control">
+                                    <option value="fies">Fies</option>
+                                    <option value="fies">ProUni</option>
+                                    <option value="fies">RH</option>              
+                                    <option value="financeiro">Financeiro</option>
+                                    <option value="academico">Academico</option>
+                                    <option value="dti">DTI</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="nexas">Nexas</option>
+                                    <option value="reprografia">Reprografia</option>
+                                    <option value="copex">Copex</option>
+                                </select> 
+                                <input type="submit" class="btn btn-primary" id="submitBA" value="Enviar" />                        
+                            </form>
+                        </div>
+                        <input type="button" class="btn btn-primary" id="resetarMV" value="Resetar" /> 
+                        <div id ="div_coord">
+                            <form method="get" class="form-inline">
+                                <label>COORDENAÇÕES</label>
+                                <select id = "cb_coord" class="form-control">
+                                    <option value="coord servico social">Coord. Serviço Social</option>
+                                    <option value="coord contabeis">Coord. Ciençias Contabeis</option>
+                                    <option value="coord fisio">Coord. Fisioterapia</option>
+                                    <option value="coord adm">Coord. Administração</option>
+                                    <option value="coord enfermagem">Coord. Enfermagem</option>
+                                    <option value="coord psicologia">Coord. Psicologia</option>
+                                    <option value="coord pedagogica">Coord. Pedagogica</option>
+                                    <option value="coord educacao fisica">Coord. Educação Fisica</option>
+                                    <option value="coord analise">Coord. Analise de Sistemas</option>
+                                    <option value="NAPI">NAPI</option>
+                                </select> 
+                                <input type="submit" class="btn btn-primary" id="submitBB" value="Enviar" />                       
+                            </form>
+                        </div>
+                        <div id ="div_convivencia">
+                            <form method="get" class="form-inline">
+                                <label>CONVIVÊNCIA</label>
+                                <select id = "cb_convivencia" class="form-control">
+                                    <option value="cantina">Cantina</option>
+                                    <option value="cantina2">Cantina 02</option>
+                                    <option value="xerox">Xerox</option>
+                                </select>
+                                <input type="submit" class="btn btn-primary" id="submitBC" value="Enviar" />
+                            </form>
+                        </div>
+                        <div id ="div_labs">
+                            <form method="get" class="form-inline">
+                                <label>LABORATÓRIOS</label>
+                                <select id = "cb_labs" class="form-control">
+                                    <option value="lab1">Laboratorio 01</option>
+                                    <option value="lab2">Laboratorio 02</option>
+                                    <option value="lab de hardware">Laboratorio de Hardware</option>                                   
+                                </select>
+                                <input type="submit" class="btn btn-primary" id="submitBC" value="Enviar" />
+                            </form>
+                        </div>
+                        <div id ="div_banheiros">
+                            <form method="get" class="form-inline">
+                                <label>BANHEIROS</label>
+                                <select id = "cb_banheiros" class="form-control">
+                                    <option value="masculino">Banheiro Masculino BA</option>
+                                    <option value="feminino">Banheiro Feminino BA</option>
+                                    <option value="banheiro masculino2">Banheiro Masculino BC</option> 
+                                    <option value="banheiro feminino2">Banheiro Feminino BC</option>  
+                                </select>
+                                <input type="submit" class="btn btn-primary" id="submitBC" value="Enviar" />
+                            </form>
+                        </div>
+                        <div id ="div_outros">
+                            <form method="get" class="form-inline">
+                                <label>OUTROS</label>
+                                <select id = "cb_moverC" class="form-control">
+                                    <option value="biblioteca">Biblioteca</option>
+                                    <option value="sala de estudos externa">Sala de Estudos Externa</option> 
+                                    <option value="sala dos professores">Sala dos Professores</option> 
+                                    <option value="copa">Copa</option> 
+                                    <option value="nde">NDE</option>
+                                </select>
+                                <input type="submit" class="btn btn-primary" id="submitBC" value="Enviar" />
+                            </form>
+                        </div>
+                    </div>
 
-            </div>
+                </div>
 
             </div>
 

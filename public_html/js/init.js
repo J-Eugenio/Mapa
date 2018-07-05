@@ -14,13 +14,23 @@ window.onload = function () {
     var div3 = document.getElementById("textDiv3");
     //-----------------------------------------------------
     var personagem = new Sprite(boy, mapa);
-    var localBA = document.getElementById("cb_moverA");
-    var localBB = document.getElementById("cb_moverB");
-    var localBC = document.getElementById("cb_moverC");
+    //Combobox's
+    var atendimentos = document.getElementById("cb_atendimentos");
+    var coord = document.getElementById("cb_coord");
+    var convivencia = document.getElementById("cb_convivencia");
+    var labs = document.getElementById("cb_labs");
+    var outros = document.getElementById("cb_outros");
+    var banheiros = document.getElementById("cb_banheiros");
+    //-----------------------------------
     var locais = document.getElementById("cb_movers");
-    var divA = document.getElementById("div_blocoA");
-    var divB = document.getElementById("div_blocoB");
-    var divC = document.getElementById("div_blocoC");
+    //Div's
+    var divAtendimentos = document.getElementById("div_atendimentos");
+    var divCoord = document.getElementById("div_coord");
+    var divConvivencia = document.getElementById("div_convivencia");
+    var divLabs = document.getElementById("div_labs");
+    var divOutros = document.getElementById("div_outros");
+    var divBanheiros = document.getElementById("div_banheiros");
+    //---------------------------------------
     var resetar = document.getElementById("resetarMV");
     var mover;
     boy.onload = function () {
@@ -31,20 +41,53 @@ window.onload = function () {
     }
     function verificarBlocos(){
         switch(locais.value){
-            case "BA":
-                divA.style.visibility = "visible";
-                divB.style.visibility = "hidden";
-                divC.style.visibility = "hidden";
+            case "atendimentos":
+                divAtendimentos.style.visibility = "visible";
+                divCoord.style.visibility = "hidden";
+                divConvivencia.style.visibility = "hidden";
+                divLabs.style.visibility = "hidden";
+                divOutros.style.visibility = "hidden";
+                divBanheiros.style.visibility = "hidden";
                 break;
-            case "BB":
-                divA.style.visibility = "hidden";
-                divB.style.visibility = "visible";
-                divC.style.visibility = "hidden";
+            case "coord":
+                divAtendimentos.style.visibility = "hidden";
+                divCoord.style.visibility = "visible";
+                divConvivencia.style.visibility = "hidden";
+                divLabs.style.visibility = "hidden";
+                divOutros.style.visibility = "hidden";
+                divBanheiros.style.visibility = "hidden";
                 break;
-            case "BC":
-                divA.style.visibility = "hidden";
-                divB.style.visibility = "hidden";
-                divC.style.visibility = "visible";
+            case "convivencia":
+                divAtendimentos.style.visibility = "hidden";
+                divCoord.style.visibility = "hidden";
+                divConvivencia.style.visibility = "visible";
+                divLabs.style.visibility = "hidden";
+                divOutros.style.visibility = "hidden";
+                divBanheiros.style.visibility = "hidden";
+                break;
+            case "labs":
+                divAtendimentos.style.visibility = "hidden";
+                divCoord.style.visibility = "hidden";
+                divConvivencia.style.visibility = "hidden";
+                divLabs.style.visibility = "visible";
+                divOutros.style.visibility = "hidden";
+                divBanheiros.style.visibility = "hidden";
+                break;
+            case "banheiros":
+                divAtendimentos.style.visibility = "hidden";
+                divCoord.style.visibility = "hidden";
+                divConvivencia.style.visibility = "hidden";
+                divLabs.style.visibility = "hidden";
+                divOutros.style.visibility = "hidden";
+                divBanheiros.style.visibility = "visible";
+                break;
+            case "outros":
+                divAtendimentos.style.visibility = "hidden";
+                divCoord.style.visibility = "hidden";
+                divConvivencia.style.visibility = "hidden";
+                divLabs.style.visibility = "hidden";
+                divOutros.style.visibility = "visible";
+                divBanheiros.style.visibility = "hidden";
                 break;
         }
     }
@@ -82,7 +125,7 @@ window.onload = function () {
     }
     function verificarLocalBA() {
         document.getElementById("submitBA").onclick = function (e) {
-            switch (localBA.value) {
+            switch (atendimentos.value) {
                 case "biblioteca":
                     mover = "biblioteca";
                     personagem.resetarMV();
