@@ -9,9 +9,9 @@ window.onload = function () {
     mapa.src = "img/mapa.jpg";
 
     //Debug para mostrar as coordenadas do personagem, mapa.
-    var div = document.getElementById("textDiv");
-    var div2 = document.getElementById("textDiv2");
-    var div3 = document.getElementById("textDiv3");
+   // var div = document.getElementById("textDiv");
+   // var div2 = document.getElementById("textDiv2");
+   // var div3 = document.getElementById("textDiv3");
     //-----------------------------------------------------
     var personagem = new Sprite(boy, mapa);
     //Combobox's
@@ -578,9 +578,9 @@ window.onload = function () {
         moverLocal(mover);
         velocidade();
         resetarMV();
-        div.textContent = personagem.posX;
-        div2.textContent = personagem.posY;
-        div3.textContent = personagem.mapaY;
+        //div.textContent = personagem.posX;
+        //div2.textContent = personagem.posY;
+       // div3.textContent = personagem.mapaY;
     }
 };
 
