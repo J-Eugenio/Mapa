@@ -87,6 +87,11 @@
             z-index: 6;
             left: 10%;
         }
+        #div_salas{
+            position: absolute;
+            z-index: 6;
+            left: 10%;
+        }
         #resetarMV{
             position: absolute;
             left: 100%;
@@ -104,6 +109,7 @@
                         <form method="get" class="form-inline">
                             <label>Bloco</label>
                             <select id = "cb_movers" class="form-control">
+                                <option value="salas">Salas</option>
                                 <option value="atendimentos">Atendimentos</option>
                                 <option value="coord">Coordenações</option>
                                 <option value="convivencia">Convivência</option>
@@ -115,6 +121,30 @@
                     </div>
 
                     <div class="form-group col-sm-6">
+                        <div id ="div_salas">
+                            <form method="get" class="form-inline">
+                                <label>SALAS</label>
+                                <select id = "cb_salas" class="form-control">
+                                    <option value="sala01">Sala 01</option>
+                                    <option value="sala02">Sala 02</option>
+                                    <option value="sala03">Sala 03</option>              
+                                    <option value="sala04">Sala 04</option>
+                                    <option value="sala05">Sala 05</option>
+                                    <option value="sala06">Sala 06</option>
+                                    <option value="sala07">Sala 07</option>
+                                    <option value="sala08">Sala 08</option>
+                                    <option value="sala09">Sala 09</option>                                   
+                                    <option value="sala13">Sala 13</option>
+                                    <option value="sala14">Sala 14</option>
+                                    <option value="sala15">Sala 15</option>
+                                    <option value="sala16">Sala 16</option>
+                                    <option value="sala17">Sala 17</option>
+                                    <option value="sala18">Sala 18</option>
+                                    <option value="sala19">Sala 19</option>
+                                </select> 
+                                <input type="submit" class="btn btn-primary" id="submitSalas" value="Enviar" />                        
+                            </form>
+                        </div>
                         <div id ="div_atendimentos">
                             <form method="get" class="form-inline">
                                 <label>ATENDIMENTOS</label>

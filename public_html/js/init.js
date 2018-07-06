@@ -21,9 +21,11 @@ window.onload = function () {
     var labs = document.getElementById("cb_labs");
     var outros = document.getElementById("cb_outros");
     var banheiros = document.getElementById("cb_banheiros");
+    var salas = document.getElementById("cb_salas");
     //-----------------------------------
     var locais = document.getElementById("cb_movers");
     //Div's
+    var divSalas = document.getElementById("div_salas");
     var divAtendimentos = document.getElementById("div_atendimentos");
     var divCoord = document.getElementById("div_coord");
     var divConvivencia = document.getElementById("div_convivencia");
@@ -48,6 +50,7 @@ window.onload = function () {
                 divLabs.style.visibility = "hidden";
                 divOutros.style.visibility = "hidden";
                 divBanheiros.style.visibility = "hidden";
+                divSalas.style.visibility = "hidden";
                 break;
             case "coord":
                 divAtendimentos.style.visibility = "hidden";
@@ -56,6 +59,7 @@ window.onload = function () {
                 divLabs.style.visibility = "hidden";
                 divOutros.style.visibility = "hidden";
                 divBanheiros.style.visibility = "hidden";
+                divSalas.style.visibility = "hidden";
                 break;
             case "convivencia":
                 divAtendimentos.style.visibility = "hidden";
@@ -64,6 +68,7 @@ window.onload = function () {
                 divLabs.style.visibility = "hidden";
                 divOutros.style.visibility = "hidden";
                 divBanheiros.style.visibility = "hidden";
+                divSalas.style.visibility = "hidden";
                 break;
             case "labs":
                 divAtendimentos.style.visibility = "hidden";
@@ -72,6 +77,7 @@ window.onload = function () {
                 divLabs.style.visibility = "visible";
                 divOutros.style.visibility = "hidden";
                 divBanheiros.style.visibility = "hidden";
+                divSalas.style.visibility = "hidden";
                 break;
             case "banheiros":
                 divAtendimentos.style.visibility = "hidden";
@@ -80,6 +86,7 @@ window.onload = function () {
                 divLabs.style.visibility = "hidden";
                 divOutros.style.visibility = "hidden";
                 divBanheiros.style.visibility = "visible";
+                divSalas.style.visibility = "hidden";
                 break;
             case "outros":
                 divAtendimentos.style.visibility = "hidden";
@@ -88,6 +95,16 @@ window.onload = function () {
                 divLabs.style.visibility = "hidden";
                 divOutros.style.visibility = "visible";
                 divBanheiros.style.visibility = "hidden";
+                divSalas.style.visibility = "hidden";
+                break;
+            case "salas":
+                divAtendimentos.style.visibility = "hidden";
+                divCoord.style.visibility = "hidden";
+                divConvivencia.style.visibility = "hidden";
+                divLabs.style.visibility = "hidden";
+                divOutros.style.visibility = "hidden";
+                divBanheiros.style.visibility = "hidden";
+                divSalas.style.visibility = "visible";
                 break;
         }
     }
@@ -122,6 +139,77 @@ window.onload = function () {
             e.preventDefault();
         };
 
+    }
+    function verificarLocalSalas() {
+        document.getElementById("submitSalas").onclick = function (e) {
+            switch (salas.value) {
+                case "sala01":
+                    mover = "sala01";
+                    personagem.resetarMV();
+                    break;
+                case "sala02":
+                    mover = "sala02";
+                    personagem.resetarMV();
+                    break;
+                case "sala03":
+                    mover = "sala03";
+                    personagem.resetarMV();
+                    break;
+                case "sala04":
+                    mover = "sala04";
+                    personagem.resetarMV();
+                    break;
+                case "sala05":
+                    mover = "sala05";
+                    personagem.resetarMV();
+                    break;
+                case "sala06":
+                    mover = "sala06";
+                    personagem.resetarMV();
+                    break;
+                case "sala07":
+                    mover = "sala07";
+                    personagem.resetarMV();
+                    break;
+                case "sala08":
+                    mover = "sala08";
+                    personagem.resetarMV();
+                    break;
+                case "sala09":
+                    mover = "sala09";
+                    personagem.resetarMV();
+                    break;              
+                case "sala13":
+                    mover = "sala13";
+                    personagem.resetarMV();
+                    break;
+                case "sala14":
+                    mover = "sala14";
+                    personagem.resetarMV();
+                    break;
+                case "sala15":
+                    mover = "sala15";
+                    personagem.resetarMV();
+                    break;
+                case "sala16":
+                    mover = "sala16";
+                    personagem.resetarMV();
+                    break;
+                case "sala17":
+                    mover = "sala17";
+                    personagem.resetarMV();
+                    break;
+                case "sala18":
+                    mover = "sala18";
+                    personagem.resetarMV();
+                    break;
+                case "sala19":
+                    mover = "sala19";
+                    personagem.resetarMV();
+                    break;
+            }
+            e.preventDefault();
+        };
     }
     function verificarLocalAtendimento() {
         document.getElementById("submitAtendimentos").onclick = function (e) {
@@ -253,7 +341,7 @@ window.onload = function () {
                     mover = "lab de hardware";
                     personagem.resetarMV();
                     break;
-                
+
             }
             e.preventDefault();
         };
@@ -281,7 +369,7 @@ window.onload = function () {
                     mover = "nde";
                     personagem.resetarMV();
                     break;
-                
+
             }
             e.preventDefault();
         };
@@ -306,13 +394,61 @@ window.onload = function () {
                     mover = "banheiro feminino2";
                     personagem.resetarMV();
                     break;
-                
+
             }
             e.preventDefault();
         };
 
     }
     function moverLocal(mv) {
+        if (mv == "sala01") {
+            personagem.mvSala01();
+        }
+        if (mv == "sala02") {
+            personagem.mvSala02();
+        }
+        if (mv == "sala03") {
+            personagem.mvSala03();
+        }
+        if (mv == "sala04") {
+            personagem.mvSala04();
+        }
+        if (mv == "sala05") {
+            personagem.mvSala05();
+        }
+        if (mv == "sala06") {
+            personagem.mvSala06();
+        }
+        if (mv == "sala07") {
+            personagem.mvSala07();
+        }
+        if (mv == "sala08") {
+            personagem.mvSala08();
+        }
+        if (mv == "sala09") {
+            personagem.mvSala09();
+        }
+        if (mv == "sala13") {
+            personagem.mvSala13();
+        }
+        if (mv == "sala14") {
+            personagem.mvSala14();
+        }
+        if (mv == "sala15") {
+            personagem.mvSala15();
+        }
+        if (mv == "sala16") {
+            personagem.mvSala16();
+        }
+        if (mv == "sala17") {
+            personagem.mvSala17();
+        }
+        if (mv == "sala18") {
+            personagem.mvSala18();
+        }
+        if (mv == "sala19") {
+            personagem.mvSala19();
+        }
         if (mv == "biblioteca") {
             personagem.mvBiblioteca();
         }
@@ -437,6 +573,7 @@ window.onload = function () {
         verificarLocalLabs();
         verificarLocalOutros();
         verificarLocalBanheiro();
+        verificarLocalSalas();
         verificarBlocos();
         moverLocal(mover);
         velocidade();
