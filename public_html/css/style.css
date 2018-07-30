@@ -9,12 +9,17 @@ body,html{
     overflow-y: hidden;
     overflow-x: hidden;
     background: #f3f3f3;
+    background-image: url(../img/fundo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .row{
     margin-top: 20px;
     margin-bottom: 10px;
 }
+
 
 canvas {
     padding-left: 0;
@@ -30,6 +35,11 @@ canvas {
 
 select {
     width: 200px !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+input {
+    font-family: 'Roboto', sans-serif !important;
 }
 
 #bloco{
@@ -42,6 +52,8 @@ select {
 
 .es{
     margin-top: -20px;
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 15px;
 }
 
 #veloMenos{
@@ -56,10 +68,11 @@ select {
 
 #resetarMV{
     box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
+    font-family: 'Roboto', sans-serif !important;
 }
 
 #veloMais, #veloMenos {
-    width: 35px !important;
+    width: 50px !important;
     font-weight: 500;
     box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.1);
 }
@@ -67,6 +80,7 @@ select {
 label {
     text-align: center !important;
     width: 120px !important;
+    color: #f3f3f3 !important;
 }
 
 .teste {
@@ -110,5 +124,18 @@ label {
 #div_salas{
     position: absolute;
     z-index: 6;
+}
+
+#logo-fvs {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: calc(100% - 130px);
+    left: calc(100% - 130px);
+}
+
+img {
+    position: relative;
+    top: 40%;
 }
 
