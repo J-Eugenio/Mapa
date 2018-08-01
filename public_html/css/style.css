@@ -134,6 +134,14 @@ label {
     left: calc(100% - 130px);
 }
 
+#logo-fbs {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: calc(100% - 130px);
+    right: calc(100% - 130px);
+}
+
 img {
     position: relative;
     top: 40%;
