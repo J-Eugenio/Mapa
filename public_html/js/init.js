@@ -9,9 +9,9 @@ window.onload = function () {
     mapa.src = "img/mapa.jpg";
 
     //Debug para mostrar as coordenadas do personagem, mapa.
-   // var div = document.getElementById("textDiv");
-   // var div2 = document.getElementById("textDiv2");
-   // var div3 = document.getElementById("textDiv3");
+    // var div = document.getElementById("textDiv");
+    // var div2 = document.getElementById("textDiv2");
+    // var div3 = document.getElementById("textDiv3");
     //-----------------------------------------------------
     var personagem = new Sprite(boy, mapa);
     //Combobox's
@@ -178,7 +178,7 @@ window.onload = function () {
                 case "sala09":
                     mover = "sala09";
                     personagem.resetarMV();
-                    break;              
+                    break;
                 case "sala13":
                     mover = "sala13";
                     personagem.resetarMV();
@@ -240,10 +240,6 @@ window.onload = function () {
                     break;
                 case "marketing":
                     mover = "marketing";
-                    personagem.resetarMV();
-                    break;
-                case "nexas":
-                    mover = "nexas";
                     personagem.resetarMV();
                     break;
                 case "reprografia":
@@ -367,6 +363,10 @@ window.onload = function () {
                     break;
                 case "nde":
                     mover = "nde";
+                    personagem.resetarMV();
+                    break;
+                case "fabSoft":
+                    mover = "fabSoft";
                     personagem.resetarMV();
                     break;
 
@@ -542,8 +542,8 @@ window.onload = function () {
         if (mv == "marketing") {
             personagem.mvMarketing();
         }
-        if (mv == "nexas") {
-            personagem.mvNexas();
+        if (mv == "fabSoft") {
+            personagem.mvFabricaSoft();
         }
         if (mv == "copa") {
             personagem.mvCopa();
@@ -580,7 +580,7 @@ window.onload = function () {
         resetarMV();
         //div.textContent = personagem.posX;
         //div2.textContent = personagem.posY;
-       // div3.textContent = personagem.mapaY;
+        // div3.textContent = personagem.mapaY;
     }
 };
 

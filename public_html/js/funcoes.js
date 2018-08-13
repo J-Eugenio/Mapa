@@ -2903,7 +2903,7 @@ function Sprite(img, mapa) {
             }
         }
     };
-    this.mvNexas = function () {
+    this.mvFabricaSoft = function () {
         if (this.posY <= 80) {
             this.posY += this.velocidade;
         }
