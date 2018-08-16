@@ -1,9 +1,10 @@
 
 function Sprite(img, mapa) {
+    this.mvLeft = this.mvUp = this.mvRight = this.mvDown = false;
     //variaveis do mapa
     this.mapaX = -4;
     this.mapaY = 0;
-    this.size = 635;
+    //this.size = 635;
     //Variaveis do personagem
     this.srcX = 0;
     this.srcY = 0;
@@ -13,7 +14,7 @@ function Sprite(img, mapa) {
     this.delay = 0;// delay do personagem antes de resetar em ms.
     this.tempo = 90;// tempo do delay
     //posição do personagem
-    this.posX = 669;
+    this.posX = 915;
     this.posY = 20;
     this.img = img;
     this.mapa = mapa;
@@ -26,7 +27,7 @@ function Sprite(img, mapa) {
         this.animacao();
     };
     this.drawMapa = function (ctx, width, height) {
-        ctx.drawImage(this.mapa, this.mapaX, this.mapaY, this.size, this.size, 0, 0, width, height);
+        ctx.drawImage(this.mapa, this.mapaX, this.mapaY, width, height, 0, 0, width, height);
         //this.animacao();
     };
 
@@ -3365,5 +3366,23 @@ function Sprite(img, mapa) {
             this.countAnim = 0;
         }
     };
+    this.move = function () {
+        if (this.mvRight) {
+            this.posX += this.velocidade;
+            
+        } else
+        if (this.mvLeft) {
+            this.posX -= this.velocidade;
+            
+        } else
+        if (this.mvUp) {
+            this.posY -= this.velocidade;
+            
+        } else
+        if (this.mvDown) {
+            this.posY += this.velocidade;
+            
+        }
+    }
 }
 

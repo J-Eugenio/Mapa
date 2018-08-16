@@ -3,15 +3,67 @@ window.onload = function () {
     var canvas = document.querySelector("canvas");
     var ctx = canvas.getContext("2d");
     //
+    var LEFT = 37, UP = 38, RIGHT = 39, DOWN = 40;
     var boy = new Image();
     boy.src = "img/Boy.png";
     var mapa = new Image();
-    mapa.src = "img/mapa.jpg";
+    mapa.src = "img/map.png";
 
     //Debug para mostrar as coordenadas do personagem, mapa.
-    // var div = document.getElementById("textDiv");
-    // var div2 = document.getElementById("textDiv2");
-    // var div3 = document.getElementById("textDiv3");
+    
+    
+    var div = document.getElementById("textDiv");
+    var div2 = document.getElementById("textDiv2");
+    var div3 = document.getElementById("textDiv3");
+
+    window.addEventListener("keydown", keydownHandler, false);
+    window.addEventListener("keyup", keyupHandler, false);
+    
+    function keydownHandler(e) {
+        switch (e.keyCode) {
+            case RIGHT:
+                personagem.mvRight = true;
+                personagem.mvLeft = false;
+                personagem.mvUp = false;
+                personagem.mvDown = false;
+                break;
+            case LEFT:
+                personagem.mvRight = false;
+                personagem.mvLeft = true;
+                personagem.mvUp = false;
+                personagem.mvDown = false;
+                break;
+            case UP:
+                personagem.mvRight = false;
+                personagem.mvLeft = false;
+                personagem.mvUp = true;
+                personagem.mvDown = false;
+                break;
+            case DOWN:
+                personagem.mvRight = false;
+                personagem.mvLeft = false;
+                personagem.mvUp = false;
+                personagem.mvDown = true;
+                break;
+        }
+    }
+
+    function keyupHandler(e) {
+        switch (e.keyCode) {
+            case RIGHT:
+                personagem.mvRight = false;
+                break;
+            case LEFT:
+                personagem.mvLeft = false;
+                break;
+            case UP:
+                personagem.mvUp = false;
+                break;
+            case DOWN:
+                personagem.mvDown = false;
+                break;
+        }
+    }
     //-----------------------------------------------------
     var personagem = new Sprite(boy, mapa);
     //Combobox's
@@ -35,11 +87,15 @@ window.onload = function () {
     //---------------------------------------
     var resetar = document.getElementById("resetarMV");
     var mover;
+
+
+
     boy.onload = function () {
         init();
     };
     function init() {
         loop();
+        personagem.move();
     }
     function verificarBlocos() {
         switch (locais.value) {
@@ -578,9 +634,11 @@ window.onload = function () {
         moverLocal(mover);
         velocidade();
         resetarMV();
-        //div.textContent = personagem.posX;
-        //div2.textContent = personagem.posY;
-        // div3.textContent = personagem.mapaY;
+        div.textContent = personagem.posX;
+        div2.textContent = personagem.posY;
+        div3.textContent = personagem.mapaY;
+        personagem.move();
+        
     }
 };
 
