@@ -10,15 +10,15 @@ window.onload = function () {
     mapa.src = "img/map.png";
 
     //Debug para mostrar as coordenadas do personagem, mapa.
-    
-    
+
+
     var div = document.getElementById("textDiv");
     var div2 = document.getElementById("textDiv2");
     var div3 = document.getElementById("textDiv3");
 
     window.addEventListener("keydown", keydownHandler, false);
     window.addEventListener("keyup", keyupHandler, false);
-    
+
     function keydownHandler(e) {
         switch (e.keyCode) {
             case RIGHT:
@@ -95,7 +95,7 @@ window.onload = function () {
     };
     function init() {
         loop();
-        
+
     }
     function verificarBlocos() {
         switch (locais.value) {
@@ -349,6 +349,10 @@ window.onload = function () {
                     mover = "coord analise";
                     personagem.resetarMV();
                     break;
+                case "coord recep":
+                    mover = "coord recep";
+                    personagem.resetarMV();
+                    break;
                 case "NAPI":
                     mover = "NAPI";
                     personagem.resetarMV();
@@ -523,7 +527,7 @@ window.onload = function () {
         if (mv == "xerox") {
             personagem.mvXerox();
         }
-        if (mv == "recep") {
+        if (mv == "coord recep") {
             personagem.mvRecepCoord();
         }
         if (mv == "masculino") {
@@ -638,7 +642,7 @@ window.onload = function () {
         div2.textContent = personagem.posY;
         div3.textContent = personagem.mapaY;
         personagem.move();
-        
+
     }
 };
 
