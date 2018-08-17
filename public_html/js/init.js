@@ -95,7 +95,7 @@ window.onload = function () {
     };
     function init() {
         loop();
-        personagem.move();
+        
     }
     function verificarBlocos() {
         switch (locais.value) {
