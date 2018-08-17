@@ -2,16 +2,16 @@ window.onload = function () {
 
     var canvas = document.querySelector("canvas");
     var ctx = canvas.getContext("2d");
-    //
-    var LEFT = 37, UP = 38, RIGHT = 39, DOWN = 40;
+    //DEBUG-----------------------------------------
+    //var LEFT = 37, UP = 38, RIGHT = 39, DOWN = 40;
+    //----------------------------------------------
     var boy = new Image();
     boy.src = "img/Boy.png";
     var mapa = new Image();
     mapa.src = "img/map.png";
 
     //Debug para mostrar as coordenadas do personagem, mapa.
-
-
+    /*
     var div = document.getElementById("textDiv");
     var div2 = document.getElementById("textDiv2");
     var div3 = document.getElementById("textDiv3");
@@ -47,7 +47,7 @@ window.onload = function () {
                 break;
         }
     }
-
+    //DEBUG
     function keyupHandler(e) {
         switch (e.keyCode) {
             case RIGHT:
@@ -63,7 +63,7 @@ window.onload = function () {
                 personagem.mvDown = false;
                 break;
         }
-    }
+    }*/
     //-----------------------------------------------------
     var personagem = new Sprite(boy, mapa);
     //Combobox's
@@ -429,8 +429,20 @@ window.onload = function () {
                     mover = "nde";
                     personagem.resetarMV();
                     break;
+                case "auditorio":
+                    mover = "auditorio";
+                    personagem.resetarMV();
+                    break;
                 case "fabSoft":
                     mover = "fabSoft";
+                    personagem.resetarMV();
+                    break;
+                case "edfisica":
+                    mover = "edfisica";
+                    personagem.resetarMV();
+                    break;
+                case "psicologia":
+                    mover = "psicologia";
                     personagem.resetarMV();
                     break;
 
@@ -615,14 +627,17 @@ window.onload = function () {
         if (mv == "copa") {
             personagem.mvCopa();
         }
-        if (mv == "deposito") {
-            personagem.mvDeposito();
-        }
         if (mv == "reprografia") {
             personagem.mvReprografia();
         }
         if (mv == "copex") {
             personagem.mvCopex();
+        }
+        if (mv == "edfisica") {
+            personagem.mvSalaEdFisica();
+        }
+        if (mv == "psicologia") {
+            personagem.mvSalaPsicologia();
         }
     }
     function render() {
@@ -645,10 +660,11 @@ window.onload = function () {
         moverLocal(mover);
         velocidade();
         resetarMV();
-        div.textContent = personagem.posX;
-        div2.textContent = personagem.posY;
-        div3.textContent = personagem.mapaY;
-        personagem.move();
+        //DEBUG
+        //div.textContent = personagem.posX;
+        //div2.textContent = personagem.posY;
+        //div3.textContent = personagem.mapaY;
+        //personagem.move();
 
     }
 };
