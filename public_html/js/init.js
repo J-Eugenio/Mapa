@@ -393,6 +393,10 @@ window.onload = function () {
                     mover = "lab2";
                     personagem.resetarMV();
                     break;
+                case "lab3":
+                    mover = "lab3";
+                    personagem.resetarMV();
+                    break;
                 case "lab de hardware":
                     mover = "lab de hardware";
                     personagem.resetarMV();
@@ -514,6 +518,9 @@ window.onload = function () {
         }
         if (mv == "lab2") {
             personagem.mvLab2();
+        }
+        if (mv == "lab3") {
+            personagem.mvLab3();
         }
         if (mv == "fies" || mv == "rh" || mv == "prouni") {
             personagem.mvProUniFiesRH();
