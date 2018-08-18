@@ -15,7 +15,7 @@ function Sprite(img, mapa) {
     this.delay = 0;// delay do personagem antes de resetar em ms.
     this.tempo = 90;// tempo do delay
     //posição do personagem
-    this.posX = 900;
+    this.posX = 915;
     this.posY = 20;
     this.img = img;
     this.mapa = mapa;
