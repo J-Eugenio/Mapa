@@ -3,7 +3,7 @@ window.onload = function () {
     var canvas = document.querySelector("canvas");
     var ctx = canvas.getContext("2d");
     //DEBUG-----------------------------------------
-    //var LEFT = 37, UP = 38, RIGHT = 39, DOWN = 40;
+    var LEFT = 37, UP = 38, RIGHT = 39, DOWN = 40;
     //----------------------------------------------
     var boy = new Image();
     boy.src = "img/Cat.png";
@@ -11,7 +11,7 @@ window.onload = function () {
     mapa.src = "img/map.png";
 
     //Debug para mostrar as coordenadas do personagem, mapa.
-    /*
+
     var div = document.getElementById("textDiv");
     var div2 = document.getElementById("textDiv2");
     var div3 = document.getElementById("textDiv3");
@@ -63,7 +63,7 @@ window.onload = function () {
                 personagem.mvDown = false;
                 break;
         }
-    }*/
+    }
     //-----------------------------------------------------
     var personagem = new Sprite(boy, mapa);
     //Combobox's
@@ -231,10 +231,6 @@ window.onload = function () {
                     mover = "sala08";
                     personagem.resetarMV();
                     break;
-                case "sala09":
-                    mover = "sala09";
-                    personagem.resetarMV();
-                    break;
                 case "sala13":
                     mover = "sala13";
                     personagem.resetarMV();
@@ -261,6 +257,10 @@ window.onload = function () {
                     break;
                 case "sala19":
                     mover = "sala19";
+                    personagem.resetarMV();
+                    break;
+                case "pos":
+                    mover = "pos";
                     personagem.resetarMV();
                     break;
             }
@@ -501,9 +501,6 @@ window.onload = function () {
         if (mv == "sala08") {
             personagem.mvSala08();
         }
-        if (mv == "sala09") {
-            personagem.mvSala09();
-        }
         if (mv == "sala13") {
             personagem.mvSala13();
         }
@@ -524,6 +521,9 @@ window.onload = function () {
         }
         if (mv == "sala19") {
             personagem.mvSala19();
+        }
+        if (mv == "pos") {
+            personagem.mvPos();
         }
         if (mv == "biblioteca") {
             personagem.mvBiblioteca();
@@ -661,10 +661,10 @@ window.onload = function () {
         velocidade();
         resetarMV();
         //DEBUG
-        //div.textContent = personagem.posX;
-        //div2.textContent = personagem.posY;
-        //div3.textContent = personagem.mapaY;
-        //personagem.move();
+        div.textContent = personagem.posX;
+        div2.textContent = personagem.posY;
+        div3.textContent = personagem.mapaY;
+        personagem.move();
 
     }
 };
