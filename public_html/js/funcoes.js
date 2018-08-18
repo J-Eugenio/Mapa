@@ -926,25 +926,25 @@ function Sprite(img, mapa) {
 //---------------------------------------------------------
 //Atendimentos
     this.mvProUniFiesRH = function () {
-        if (this.posY <= 135 && this.posX == 915) {
+        if (this.posY <= 118 && this.posX == 900) {
             this.posY += this.velocidade;
         }
-        if (this.posY >= 135 && this.posY <= 139) {
-            if (this.posX >= 809) {
+        if (this.posY >= 118 && this.posY <= 122) {
+            if (this.posX >= 795) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar esquerda
+                this.srcY = this.height;//virar esquerda
             }
         }
-        if (this.posX >= 806 && this.posX <= 810) {
-            if (this.posY <= 185) {
+        if (this.posX >= 795 && this.posX <= 800) {
+            if (this.posY <= 168) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             }
         }
-        if (this.posY >= 184 && this.posY <= 189) {
-            if (this.posX <= 917) {
+        if (this.posY >= 168 && this.posY <= 172) {
+            if (this.posX <= 903) {
                 this.posX += this.velocidade;
-                this.srcY = this.height * 3;//virar direita
+                this.srcY = this.height * 2;//virar direita
             } else {
                 this.delay++;
                 if (this.delay >= this.tempo) {
@@ -954,17 +954,17 @@ function Sprite(img, mapa) {
         }
     };
     this.mvFinanceiro = function () {
-        if (this.posY <= 135 && this.posX == 915) {
+        if (this.posY <= 118 && this.posX == 900) {
             this.posY += this.velocidade;
         }
-        if (this.posY >= 135 && this.posY <= 139) {
-            if (this.posX >= 809) {
+        if (this.posY >= 118 && this.posY <= 122) {
+            if (this.posX >= 795) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar esquerda
+                this.srcY = this.height;//virar esquerda
             }
         }
-        if (this.posX >= 806 && this.posX <= 810) {
-            if (this.posY <= 185) {
+        if (this.posX >= 792 && this.posX <= 796) {
+            if (this.posY <= 168) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             } else if (this.posY < 269) {
@@ -974,25 +974,25 @@ function Sprite(img, mapa) {
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= this.velocidade;
-            this.srcY = this.height * 2;//virar esquerda
-            if (this.posX >= 615 && this.posX <= 616) {
+            this.srcY = this.height;//virar esquerda
+            if (this.posX >= 601 && this.posX <= 604) {
                 this.aux = false;
             }
         }
-        if (this.posX >= 614 && this.posX <= 617) {
-            if (this.posY <= 567) {
+        if (this.posX >= 601 && this.posX <= 604) {
+            if (this.posY <= 550) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             }
         }
-        if (this.posY >= 565 && this.posY <= 569) {
-            if (this.posX <= 719) {
+        if (this.posY >= 550 && this.posY <= 555) {
+            if (this.posX <= 705) {
                 this.posX += this.velocidade;
-                this.srcY = this.height * 3;//virar para direita
+                this.srcY = this.height * 2;//virar para direita
             }
         }
-        if (this.posX >= 715 && this.posX <= 722 && this.posY >= 565) {
-            if (this.posY <= 613) {
+        if (this.posX >= 704 && this.posX <= 710 && this.posY >= 545) {
+            if (this.posY <= 600) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             } else {
@@ -1004,17 +1004,17 @@ function Sprite(img, mapa) {
         }
     };
     this.mvAcademico = function () {
-        if (this.posY <= 135 && this.posX == 915) {
+        if (this.posY <= 118 && this.posX == 900) {
             this.posY += this.velocidade;
         }
-        if (this.posY >= 135 && this.posY <= 139) {
-            if (this.posX >= 809) {
+        if (this.posY >= 118 && this.posY <= 122) {
+            if (this.posX >= 795) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar esquerda
+                this.srcY = this.height;//virar esquerda
             }
         }
-        if (this.posX >= 806 && this.posX <= 810) {
-            if (this.posY <= 185) {
+        if (this.posX >= 792 && this.posX <= 796) {
+            if (this.posY <= 168) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             } else if (this.posY < 269) {
@@ -1024,21 +1024,26 @@ function Sprite(img, mapa) {
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= this.velocidade;
-            this.srcY = this.height * 2;//virar esquerda
-            if (this.posX >= 615 && this.posX <= 616) {
+            this.srcY = this.height;//virar esquerda
+            if (this.posX >= 601 && this.posX <= 604) {
                 this.aux = false;
             }
         }
-        if (this.posX >= 614 && this.posX <= 617) {
-            if (this.posY <= 670) {
+        if (this.posX >= 601 && this.posX <= 604) {
+            if (this.posY <= 450) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
+            } else {
+                if (this.mapaY <= 200) {
+                    this.mapaY += this.velocidade;
+                    this.srcY = 0;//virar para baixo
+                }
             }
         }
-        if (this.posY >= 669 && this.posY <= 672) {
+        if (this.mapaY >= 199 && this.mapaY <= 206) {
             if (this.posX <= 761) {
                 this.posX += this.velocidade;
-                this.srcY = this.height * 3;//virar para direita
+                this.srcY = this.height * 2;//virar para direita
             } else {
                 this.delay++;
                 if (this.delay >= this.tempo) {
@@ -1048,17 +1053,17 @@ function Sprite(img, mapa) {
         }
     };
     this.mvDTI = function () {
-        if (this.posY <= 135 && this.posX == 915) {
+        if (this.posY <= 118 && this.posX == 900) {
             this.posY += this.velocidade;
         }
-        if (this.posY >= 135 && this.posY <= 139) {
-            if (this.posX >= 809) {
+        if (this.posY >= 118 && this.posY <= 122) {
+            if (this.posX >= 795) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar esquerda
+                this.srcY = this.height;//virar esquerda
             }
         }
-        if (this.posX >= 806 && this.posX <= 810) {
-            if (this.posY <= 185) {
+        if (this.posX >= 792 && this.posX <= 796) {
+            if (this.posY <= 168) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             } else if (this.posY < 269) {
@@ -1068,43 +1073,52 @@ function Sprite(img, mapa) {
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= this.velocidade;
-            this.srcY = this.height * 2;//virar esquerda
-            if (this.posX >= 615 && this.posX <= 616) {
+            this.srcY = this.height;//virar esquerda
+            if (this.posX >= 601 && this.posX <= 604) {
                 this.aux = false;
             }
         }
-        if (this.posX >= 614 && this.posX <= 617) {
-            if (this.posY <= 683) {
+        if (this.posX >= 601 && this.posX <= 604) {
+            if (this.posY <= 450) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
+            } else {
+                if (this.mapaY <= 200) {
+                    this.mapaY += this.velocidade;
+                    this.srcY = 0;//virar para baixo
+                }
             }
         }
-        if (this.posY >= 682 && this.posY <= 687) {
-            if (this.posX >= 547) {
+        if (this.mapaY >= 199 && this.mapaY <= 206) {
+            if (this.posX >= 540) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar para esquerda
+                this.srcY = this.height;//virar para esquerda
+            }
+        }
+        if (this.posX >= 538 && this.posX <= 543 && this.posY >= 449 && this.posY <= 453) {
+            if (this.mapaY <= 230) {
+                this.mapaY += this.velocidade;
+                this.srcY = 0;//virar para baixo
             } else {
                 this.delay++;
                 if (this.delay >= this.tempo) {
                     this.resetarMV();
-                } else {
-                    this.srcY = 0;//virar para baixo
                 }
             }
         }
     };
     this.mvMarketing = function () {
-        if (this.posY <= 135 && this.posX == 915) {
+        if (this.posY <= 118 && this.posX == 900) {
             this.posY += this.velocidade;
         }
-        if (this.posY >= 135 && this.posY <= 139) {
-            if (this.posX >= 809) {
+        if (this.posY >= 118 && this.posY <= 122) {
+            if (this.posX >= 795) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar esquerda
+                this.srcY = this.height;//virar esquerda
             }
         }
-        if (this.posX >= 806 && this.posX <= 810) {
-            if (this.posY <= 185) {
+        if (this.posX >= 792 && this.posX <= 796) {
+            if (this.posY <= 168) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             } else if (this.posY < 269) {
@@ -1114,39 +1128,43 @@ function Sprite(img, mapa) {
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= this.velocidade;
-            this.srcY = this.height * 2;//virar esquerda
-            if (this.posX >= 615 && this.posX <= 616) {
+            this.srcY = this.height;//virar esquerda
+            if (this.posX >= 601 && this.posX <= 604) {
                 this.aux = false;
             }
         }
-        if (this.posX >= 615 && this.posX <= 619) {
-            if (this.posY <= 809) {
+        if (this.posX >= 601 && this.posX <= 604) {
+            if (this.posY <= 450) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
-            }
-        }
-        if (this.posY >= 809 && this.posY <= 812 && this.mapaY == 0) {
-            if (this.posX <= 647) {
-                this.posX += this.velocidade;
-                this.srcY = this.height * 3;//virar para direita
             } else {
-                this.posY += this.velocidade;
+                if (this.mapaY <= 350) {
+                    this.mapaY += this.velocidade;
+                    this.srcY = 0;//virar para baixo
+                }
             }
         }
-        if (this.posX >= 647 && this.posX <= 649 && this.posY >= 809 && this.mapaY <= 180) {
-            if (this.mapaY <= 180) {
+        if (this.mapaY >= 348 && this.mapaY <= 355) {
+            if (this.posX <= 633) {
+                this.posX += this.velocidade;
+                this.srcY = this.height * 2;//virar para direita
+            }
+        }
+        if (this.posX >= 633 && this.posX <= 640 && this.posY >= 450 && this.mapaY <= 600) {
+            if (this.mapaY <= 520) {
                 this.mapaY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             }
         }
-        if (this.posY >= 809 && this.posY <= 816 && this.mapaY >= 180 && this.mapaY <= 185) {
-            if (this.posX <= 735) {
+        if (this.posY >= 450 && this.posY <= 460 && this.mapaY >= 520 && this.mapaY <= 526) {
+            if (this.posX <= 721) {
                 this.posX += this.velocidade;
-                this.srcY = this.height * 3;//virar para direita
+                this.srcY = this.height * 2;//virar para direita
             }
         }
-        if (this.posY >= 809 && this.posY <= 816 && this.posX >= 735 && this.posX <= 739 && this.mapaY >= 180 && this.mapaY <= 390) {
-            if (this.mapaY <= 380) {
+        if (this.posY >= 450 && this.posY <= 460 && this.posX >= 721 && this.posX <= 725 &&
+                this.mapaY >= 520 && this.mapaY <= 750) {
+            if (this.mapaY <= 730) {
                 this.mapaY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             } else {
@@ -1155,22 +1173,25 @@ function Sprite(img, mapa) {
             }
         }
         //Bloco C
-        if (this.posY >= 811 && this.posY <= 819 && this.mapaY >= 380 && this.mapaY <= 385) {
-            if (this.posX >= 158) {
+        if (this.posY >= 450 && this.posY <= 460 && this.mapaY >= 730 && this.mapaY <= 740) {
+            if (this.posX >= 144) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar para esquerda
+                this.srcY = this.height;//virar para esquerda
             }
         }
-        if (this.posX >= 155 && this.posX <= 160 && this.posY >= 809 && this.posY <= 812) {
-            if (this.mapaY <= 800) {
+        if (this.posX >= 142 && this.posX <= 150 && this.posY >= 450 && this.posY <= 456) {
+            if (this.mapaY <= 1100) {
                 this.mapaY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             }
         }
-        if (this.posY >= 809 && this.posY <= 812 && this.mapaY >= 799 && this.mapaY <= 802) {
-            if (this.posX >= 50) {
+        if (this.posY >= 440 && this.posY <= 510 && this.mapaY >= 1100 && this.mapaY <= 1110) {
+            if (this.posY <= 490) {
+                this.posY += this.velocidade;
+                this.srcY = 0;//virar para baixo
+            } else if (this.posX >= 36) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar para esquerda
+                this.srcY = this.height;//virar para esquerda
             } else {
                 this.delay++;
                 if (this.delay >= this.tempo) {
@@ -1180,17 +1201,17 @@ function Sprite(img, mapa) {
         }
     };
     this.mvReprografia = function () {
-        if (this.posY <= 135 && this.posX == 915) {
+        if (this.posY <= 118 && this.posX == 900) {
             this.posY += this.velocidade;
         }
-        if (this.posY >= 135 && this.posY <= 139) {
-            if (this.posX >= 809) {
+        if (this.posY >= 118 && this.posY <= 122) {
+            if (this.posX >= 795) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar esquerda
+                this.srcY = this.height;//virar esquerda
             }
         }
-        if (this.posX >= 806 && this.posX <= 810) {
-            if (this.posY <= 185) {
+        if (this.posX >= 792 && this.posX <= 796) {
+            if (this.posY <= 168) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             } else if (this.posY < 269) {
@@ -1200,39 +1221,43 @@ function Sprite(img, mapa) {
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= this.velocidade;
-            this.srcY = this.height * 2;//virar esquerda
-            if (this.posX >= 615 && this.posX <= 616) {
+            this.srcY = this.height;//virar esquerda
+            if (this.posX >= 601 && this.posX <= 604) {
                 this.aux = false;
             }
         }
-        if (this.posX >= 615 && this.posX <= 619) {
-            if (this.posY <= 809) {
+        if (this.posX >= 601 && this.posX <= 604) {
+            if (this.posY <= 450) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
-            }
-        }
-        if (this.posY >= 809 && this.posY <= 812 && this.mapaY == 0) {
-            if (this.posX <= 647) {
-                this.posX += this.velocidade;
-                this.srcY = this.height * 3;//virar para direita
             } else {
-                this.posY += this.velocidade;
+                if (this.mapaY <= 350) {
+                    this.mapaY += this.velocidade;
+                    this.srcY = 0;//virar para baixo
+                }
             }
         }
-        if (this.posX >= 647 && this.posX <= 649 && this.posY >= 809 && this.mapaY <= 180) {
-            if (this.mapaY <= 180) {
+        if (this.mapaY >= 348 && this.mapaY <= 355) {
+            if (this.posX <= 633) {
+                this.posX += this.velocidade;
+                this.srcY = this.height * 2;//virar para direita
+            }
+        }
+        if (this.posX >= 633 && this.posX <= 640 && this.posY >= 450 && this.mapaY <= 600) {
+            if (this.mapaY <= 520) {
                 this.mapaY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             }
         }
-        if (this.posY >= 809 && this.posY <= 816 && this.mapaY >= 180 && this.mapaY <= 185) {
-            if (this.posX <= 735) {
+        if (this.posY >= 450 && this.posY <= 460 && this.mapaY >= 520 && this.mapaY <= 526) {
+            if (this.posX <= 721) {
                 this.posX += this.velocidade;
-                this.srcY = this.height * 3;//virar para direita
+                this.srcY = this.height * 2;//virar para direita
             }
         }
-        if (this.posY >= 809 && this.posY <= 816 && this.posX >= 735 && this.posX <= 739 && this.mapaY >= 180 && this.mapaY <= 390) {
-            if (this.mapaY <= 380) {
+        if (this.posY >= 450 && this.posY <= 460 && this.posX >= 721 && this.posX <= 725 &&
+                this.mapaY >= 520 && this.mapaY <= 750) {
+            if (this.mapaY <= 730) {
                 this.mapaY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             } else {
@@ -1241,28 +1266,35 @@ function Sprite(img, mapa) {
             }
         }
         //Bloco C
-        if (this.posY >= 811 && this.posY <= 819 && this.mapaY >= 380 && this.mapaY <= 385) {
-            if (this.posX >= 682) {
+        if (this.posY >= 450 && this.posY <= 460 && this.mapaY >= 730 && this.mapaY <= 740) {
+            if (this.posX >= 669) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar para esquerda
+                this.srcY = this.height;//virar para esquerda
             }
         }
-        if (this.posX >= 679 && this.posX <= 685 && this.posY >= 809 && this.posY <= 815 && this.mapaY >= 380) {
-            if (this.mapaY <= 950) {
+        if (this.posX >= 665 && this.posX <= 675 && this.posY >= 450 && this.posY <= 456 &&
+                this.mapaY >= 725) {
+            if (this.mapaY <= 1100) {
                 this.mapaY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             }
         }
-        if (this.mapaY >= 950 && this.mapaY <= 955 && this.posY >= 809 && this.posY <= 812) {
-            if (this.posX >= 419) {
-                this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar para esquerda
+        if (this.posX >= 665 && this.posX <= 675 && this.mapaY >= 1100 && this.mapaY <= 1110) {
+            if (this.posY <= 647) {
+                this.posY += this.velocidade;
+                this.srcY = 0;//virar para baixo
             }
         }
-        if (this.posX >= 417 && this.posX <= 422 && this.mapaY >= 950 && this.mapaY <= 955) {
-            if (this.posY >= 750) {
+        if (this.posY >= 647 && this.posY <= 657 && this.mapaY >= 1100 && this.mapaY <= 1110) {
+            if (this.posX >= 402) {
+                this.posX -= this.velocidade;
+                this.srcY = this.height;//virar para esquerda
+            }
+        }
+        if (this.posX >= 398 && this.posX <= 408 && this.mapaY >= 1100 && this.mapaY <= 1110) {
+            if (this.posY >= 580) {
                 this.posY -= this.velocidade;
-                this.srcY = this.height; //virar para cima
+                this.srcY = this.height * 3;//virar para cima
             } else {
                 this.delay++;
                 if (this.delay >= this.tempo) {
@@ -1272,17 +1304,17 @@ function Sprite(img, mapa) {
         }
     };
     this.mvCopex = function () {
-        if (this.posY <= 135 && this.posX == 915) {
+                if (this.posY <= 118 && this.posX == 900) {
             this.posY += this.velocidade;
         }
-        if (this.posY >= 135 && this.posY <= 139) {
-            if (this.posX >= 809) {
+        if (this.posY >= 118 && this.posY <= 122) {
+            if (this.posX >= 795) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar esquerda
+                this.srcY = this.height;//virar esquerda
             }
         }
-        if (this.posX >= 806 && this.posX <= 810) {
-            if (this.posY <= 185) {
+        if (this.posX >= 792 && this.posX <= 796) {
+            if (this.posY <= 168) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             } else if (this.posY < 269) {
@@ -1292,39 +1324,43 @@ function Sprite(img, mapa) {
         if (this.aux) {
             this.posY += 0.5;
             this.posX -= this.velocidade;
-            this.srcY = this.height * 2;//virar esquerda
-            if (this.posX >= 615 && this.posX <= 616) {
+            this.srcY = this.height;//virar esquerda
+            if (this.posX >= 601 && this.posX <= 604) {
                 this.aux = false;
             }
         }
-        if (this.posX >= 615 && this.posX <= 619) {
-            if (this.posY <= 809) {
+        if (this.posX >= 601 && this.posX <= 604) {
+            if (this.posY <= 450) {
                 this.posY += this.velocidade;
                 this.srcY = 0;//virar para baixo
-            }
-        }
-        if (this.posY >= 809 && this.posY <= 812 && this.mapaY == 0) {
-            if (this.posX <= 647) {
-                this.posX += this.velocidade;
-                this.srcY = this.height * 3;//virar para direita
             } else {
-                this.posY += this.velocidade;
+                if (this.mapaY <= 350) {
+                    this.mapaY += this.velocidade;
+                    this.srcY = 0;//virar para baixo
+                }
             }
         }
-        if (this.posX >= 647 && this.posX <= 649 && this.posY >= 809 && this.mapaY <= 180) {
-            if (this.mapaY <= 180) {
+        if (this.mapaY >= 348 && this.mapaY <= 355) {
+            if (this.posX <= 633) {
+                this.posX += this.velocidade;
+                this.srcY = this.height * 2;//virar para direita
+            }
+        }
+        if (this.posX >= 633 && this.posX <= 640 && this.posY >= 450 && this.mapaY <= 600) {
+            if (this.mapaY <= 520) {
                 this.mapaY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             }
         }
-        if (this.posY >= 809 && this.posY <= 816 && this.mapaY >= 180 && this.mapaY <= 185) {
-            if (this.posX <= 735) {
+        if (this.posY >= 450 && this.posY <= 460 && this.mapaY >= 520 && this.mapaY <= 526) {
+            if (this.posX <= 721) {
                 this.posX += this.velocidade;
-                this.srcY = this.height * 3;//virar para direita
+                this.srcY = this.height * 2;//virar para direita
             }
         }
-        if (this.posY >= 809 && this.posY <= 816 && this.posX >= 735 && this.posX <= 739 && this.mapaY >= 180 && this.mapaY <= 390) {
-            if (this.mapaY <= 380) {
+        if (this.posY >= 450 && this.posY <= 460 && this.posX >= 721 && this.posX <= 725 &&
+                this.mapaY >= 520 && this.mapaY <= 750) {
+            if (this.mapaY <= 730) {
                 this.mapaY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             } else {
@@ -1333,28 +1369,35 @@ function Sprite(img, mapa) {
             }
         }
         //Bloco C
-        if (this.posY >= 811 && this.posY <= 819 && this.mapaY >= 380 && this.mapaY <= 385) {
-            if (this.posX >= 682) {
+        if (this.posY >= 450 && this.posY <= 460 && this.mapaY >= 730 && this.mapaY <= 740) {
+            if (this.posX >= 669) {
                 this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar para esquerda
+                this.srcY = this.height;//virar para esquerda
             }
         }
-        if (this.posX >= 679 && this.posX <= 685 && this.posY >= 809 && this.posY <= 815 && this.mapaY >= 380) {
-            if (this.mapaY <= 950) {
+        if (this.posX >= 665 && this.posX <= 675 && this.posY >= 450 && this.posY <= 456 &&
+                this.mapaY >= 725) {
+            if (this.mapaY <= 1100) {
                 this.mapaY += this.velocidade;
                 this.srcY = 0;//virar para baixo
             }
         }
-        if (this.mapaY >= 950 && this.mapaY <= 955 && this.posY >= 809 && this.posY <= 812) {
-            if (this.posX >= 326) {
-                this.posX -= this.velocidade;
-                this.srcY = this.height * 2;//virar para esquerda
+        if (this.posX >= 665 && this.posX <= 675 && this.mapaY >= 1100 && this.mapaY <= 1110) {
+            if (this.posY <= 647) {
+                this.posY += this.velocidade;
+                this.srcY = 0;//virar para baixo
             }
         }
-        if (this.posX >= 325 && this.posX <= 329 && this.mapaY >= 950 && this.mapaY <= 955) {
-            if (this.posY >= 750) {
+        if (this.posY >= 647 && this.posY <= 657 && this.mapaY >= 1100 && this.mapaY <= 1110) {
+            if (this.posX >= 312) {
+                this.posX -= this.velocidade;
+                this.srcY = this.height;//virar para esquerda
+            }
+        }
+        if (this.posX >= 310 && this.posX <= 320 && this.mapaY >= 1100 && this.mapaY <= 1110) {
+            if (this.posY >= 580) {
                 this.posY -= this.velocidade;
-                this.srcY = this.height; //virar para cima
+                this.srcY = this.height * 3;//virar para cima
             } else {
                 this.delay++;
                 if (this.delay >= this.tempo) {

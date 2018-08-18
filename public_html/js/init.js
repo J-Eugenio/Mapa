@@ -165,13 +165,15 @@ window.onload = function () {
         }
     }
     function velocidade() {
-        if (personagem.velocidade <= 2) {
-            document.getElementById("veloMenos").disabled = true;
+        if (personagem.velocidade != 3) {
             document.getElementById("veloMais").disabled = false;
-        }
-        if (personagem.velocidade >= 2) {
-            document.getElementById("veloMenos").disabled = false;
+        }else{
             document.getElementById("veloMais").disabled = true;
+        }
+        if (personagem.velocidade != 1) {
+            document.getElementById("veloMenos").disabled = false;
+        }else{
+            document.getElementById("veloMenos").disabled = true;
         }
         document.getElementById("veloMais").onclick = function (e) {
             if (personagem.velocidade <= 2) {
@@ -180,7 +182,7 @@ window.onload = function () {
             e.preventDefault();
         };
         document.getElementById("veloMenos").onclick = function (e) {
-            if (personagem.velocidade >= 2) {
+            if (personagem.velocidade != 1) {
                 personagem.velocidade--;
             }
             e.preventDefault();
