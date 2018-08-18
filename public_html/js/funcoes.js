@@ -9,13 +9,13 @@ function Sprite(img, mapa) {
     //Variaveis do personagem
     this.srcX = 0;
     this.srcY = 0;
-    this.width = 24;
-    this.height = 32;
+    this.width = 398;
+    this.height = 355;
     this.velocidade = 1;
     this.delay = 0;// delay do personagem antes de resetar em ms.
     this.tempo = 90;// tempo do delay
     //posição do personagem
-    this.posX = 915;
+    this.posX = 900;
     this.posY = 20;
     this.img = img;
     this.mapa = mapa;
@@ -24,7 +24,7 @@ function Sprite(img, mapa) {
     this.resetar = false;//resetar posição
     //Desenha
     this.draw = function (ctx) {
-        ctx.drawImage(this.img, this.srcX, this.srcY, this.width, this.height, this.posX, this.posY, this.width, this.height);
+        ctx.drawImage(this.img, this.srcX, this.srcY, this.width, this.height, this.posX, this.posY, 55, 55);
         this.animacao();
     };
     this.drawMapa = function (ctx, width, height) {
@@ -3494,10 +3494,10 @@ function Sprite(img, mapa) {
     this.animacao = function () {
         if (this.animar) {
             this.countAnim++;
-            if (this.countAnim >= 40) {
+            if (this.countAnim >= 24) {
                 this.countAnim = 0;
             }
-            this.srcX = Math.floor(this.countAnim / 5) * this.width;
+            this.srcX = Math.floor(this.countAnim / 8) * this.width;
         } else {
             this.srcX = 0;
             this.countAnim = 0;

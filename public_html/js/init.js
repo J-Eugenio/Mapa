@@ -6,7 +6,7 @@ window.onload = function () {
     //var LEFT = 37, UP = 38, RIGHT = 39, DOWN = 40;
     //----------------------------------------------
     var boy = new Image();
-    boy.src = "img/Boy.png";
+    boy.src = "img/Cat.png";
     var mapa = new Image();
     mapa.src = "img/map.png";
 
