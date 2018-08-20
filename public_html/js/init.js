@@ -3,7 +3,7 @@ window.onload = function () {
     var canvas = document.querySelector("canvas");
     var ctx = canvas.getContext("2d");
     //DEBUG-----------------------------------------
-    var LEFT = 37, UP = 38, RIGHT = 39, DOWN = 40;
+    //var LEFT = 37, UP = 38, RIGHT = 39, DOWN = 40;
     //----------------------------------------------
     var boy = new Image();
     boy.src = "img/Cat.png";
@@ -12,7 +12,7 @@ window.onload = function () {
 
     //Debug para mostrar as coordenadas do personagem, mapa.
 
-    var div = document.getElementById("textDiv");
+   /* var div = document.getElementById("textDiv");
     var div2 = document.getElementById("textDiv2");
     var div3 = document.getElementById("textDiv3");
 
@@ -48,7 +48,7 @@ window.onload = function () {
         }
     }
     //DEBUG
-    function keyupHandler(e) {
+    /*function keyupHandler(e) {
         switch (e.keyCode) {
             case RIGHT:
                 personagem.mvRight = false;
@@ -63,7 +63,7 @@ window.onload = function () {
                 personagem.mvDown = false;
                 break;
         }
-    }
+    }*/
     //-----------------------------------------------------
     var personagem = new Sprite(boy, mapa);
     //Combobox's
@@ -662,11 +662,11 @@ window.onload = function () {
         moverLocal(mover);
         velocidade();
         resetarMV();
-        //DEBUG
+        /*/DEBUG
         div.textContent = personagem.posX;
         div2.textContent = personagem.posY;
         div3.textContent = personagem.mapaY;
-        personagem.move();
+        personagem.move();*/
 
     }
 };

@@ -1,7 +1,7 @@
 
 function Sprite(img, mapa) {
     //DEBUG
-    this.mvLeft = this.mvUp = this.mvRight = this.mvDown = false;
+    //this.mvLeft = this.mvUp = this.mvRight = this.mvDown = false;
     //variaveis do mapa
     this.mapaX = -4;
     this.mapaY = 0;
@@ -3732,7 +3732,7 @@ function Sprite(img, mapa) {
         }
     };
     //DEBUG
-    this.move = function () {
+    /*this.move = function () {
         if (this.mvRight) {
             this.posX += this.velocidade;
 
@@ -3749,6 +3749,6 @@ function Sprite(img, mapa) {
             this.posY += this.velocidade;
 
         }
-    }
+    }*/
 }
 
