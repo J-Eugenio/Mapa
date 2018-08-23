@@ -9,63 +9,65 @@ window.onload = function () {
     boy.src = "img/Cat.png";
     var mapa = new Image();
     mapa.src = "img/map.png";
+    var aviso = new Image();
+    aviso.src = "img/siga.png"
 
     //Debug para mostrar as coordenadas do personagem, mapa.
 
-   /* var div = document.getElementById("textDiv");
-    var div2 = document.getElementById("textDiv2");
-    var div3 = document.getElementById("textDiv3");
-
-    window.addEventListener("keydown", keydownHandler, false);
-    window.addEventListener("keyup", keyupHandler, false);
-
-    function keydownHandler(e) {
-        switch (e.keyCode) {
-            case RIGHT:
-                personagem.mvRight = true;
-                personagem.mvLeft = false;
-                personagem.mvUp = false;
-                personagem.mvDown = false;
-                break;
-            case LEFT:
-                personagem.mvRight = false;
-                personagem.mvLeft = true;
-                personagem.mvUp = false;
-                personagem.mvDown = false;
-                break;
-            case UP:
-                personagem.mvRight = false;
-                personagem.mvLeft = false;
-                personagem.mvUp = true;
-                personagem.mvDown = false;
-                break;
-            case DOWN:
-                personagem.mvRight = false;
-                personagem.mvLeft = false;
-                personagem.mvUp = false;
-                personagem.mvDown = true;
-                break;
-        }
-    }
-    //DEBUG
-    /*function keyupHandler(e) {
-        switch (e.keyCode) {
-            case RIGHT:
-                personagem.mvRight = false;
-                break;
-            case LEFT:
-                personagem.mvLeft = false;
-                break;
-            case UP:
-                personagem.mvUp = false;
-                break;
-            case DOWN:
-                personagem.mvDown = false;
-                break;
-        }
-    }*/
+    /* var div = document.getElementById("textDiv");
+     var div2 = document.getElementById("textDiv2");
+     var div3 = document.getElementById("textDiv3");
+     
+     window.addEventListener("keydown", keydownHandler, false);
+     window.addEventListener("keyup", keyupHandler, false);
+     
+     function keydownHandler(e) {
+     switch (e.keyCode) {
+     case RIGHT:
+     personagem.mvRight = true;
+     personagem.mvLeft = false;
+     personagem.mvUp = false;
+     personagem.mvDown = false;
+     break;
+     case LEFT:
+     personagem.mvRight = false;
+     personagem.mvLeft = true;
+     personagem.mvUp = false;
+     personagem.mvDown = false;
+     break;
+     case UP:
+     personagem.mvRight = false;
+     personagem.mvLeft = false;
+     personagem.mvUp = true;
+     personagem.mvDown = false;
+     break;
+     case DOWN:
+     personagem.mvRight = false;
+     personagem.mvLeft = false;
+     personagem.mvUp = false;
+     personagem.mvDown = true;
+     break;
+     }
+     }
+     //DEBUG
+     /*function keyupHandler(e) {
+     switch (e.keyCode) {
+     case RIGHT:
+     personagem.mvRight = false;
+     break;
+     case LEFT:
+     personagem.mvLeft = false;
+     break;
+     case UP:
+     personagem.mvUp = false;
+     break;
+     case DOWN:
+     personagem.mvDown = false;
+     break;
+     }
+     }*/
     //-----------------------------------------------------
-    var personagem = new Sprite(boy, mapa);
+    var personagem = new Sprite(boy, mapa, aviso);
     //Combobox's
     var atendimentos = document.getElementById("cb_atendimentos");
     var coord = document.getElementById("cb_coord");
@@ -167,12 +169,12 @@ window.onload = function () {
     function velocidade() {
         if (personagem.velocidade != 3) {
             document.getElementById("veloMais").disabled = false;
-        }else{
+        } else {
             document.getElementById("veloMais").disabled = true;
         }
         if (personagem.velocidade != 1) {
             document.getElementById("veloMenos").disabled = false;
-        }else{
+        } else {
             document.getElementById("veloMenos").disabled = true;
         }
         document.getElementById("veloMais").onclick = function (e) {
@@ -647,10 +649,14 @@ window.onload = function () {
         personagem.drawMapa(ctx, canvas.width, canvas.height);
         personagem.draw(ctx);
     }
+    function rederAviso(){
+        personagem.drawAviso(ctx);
+    }
 
     function loop() {
         requestAnimationFrame(loop, canvas);
         render();
+        rederAviso();
         verificarLocalAtendimento();
         verificarLocalCoord();
         verificarLocalConvivencia();
@@ -663,10 +669,10 @@ window.onload = function () {
         velocidade();
         resetarMV();
         /*/DEBUG
-        div.textContent = personagem.posX;
-        div2.textContent = personagem.posY;
-        div3.textContent = personagem.mapaY;
-        personagem.move();*/
+         div.textContent = personagem.posX;
+         div2.textContent = personagem.posY;
+         div3.textContent = personagem.mapaY;
+         personagem.move();*/
 
     }
 };
